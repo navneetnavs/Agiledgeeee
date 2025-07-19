@@ -1,6 +1,7 @@
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import ServicesSection from './components/ServicesSection'
+import WhyChoose from './components/WhyChoose'
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
 
         {/* Animated Services Section */}
         <ServicesSection />
+
+        {/* Why Choose Us Timeline Section */}
+        <WhyChoose />
       </main>
       
       <Footer />
