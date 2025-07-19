@@ -316,7 +316,7 @@ const Navbar = () => {
             
             {/* Career */}
             <a href="#" className="px-4 py-2 rounded-lg text-gray-700 hover:text-green-600 font-medium transition-all duration-300 hover:bg-green-50">
-              Career
+              Careers
             </a>
           </div>
 
