@@ -141,7 +141,7 @@ const HeroSection = () => {
                 }`}
                 style={{ transitionDelay: '600ms' }}
               >
-                Your trusted partner in <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 font-semibold">digital transformation</span>, <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 font-semibold">innovation</span>, and <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-red-400 font-semibold">sustainable growth</span>
+                Your trusted partner in providing <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 font-semibold">Fast</span>, <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 font-semibold">Flexible</span>, and <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-red-400 font-semibold">Future-Ready Cloud Solutions</span>
               </p>
             </div>
 
