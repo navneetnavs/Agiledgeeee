@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import Logo from './Logo'
 
 const SplashScreen = ({ onComplete }) => {
   const [currentStep, setCurrentStep] = useState(0)
@@ -106,27 +107,17 @@ const SplashScreen = ({ onComplete }) => {
           />
           
           {/* Logo */}
-          <div className="relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-8 shadow-2xl border border-gray-700">
-            <div className="flex items-center space-x-4">
-              <div 
-                className="w-16 h-16 bg-gradient-to-r from-green-400 to-blue-500 rounded-2xl flex items-center justify-center shadow-lg"
-                style={{
-                  transform: `scale(${currentStep >= 2 ? 1.1 : 1})`,
-                  transition: 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
-                }}
-              >
-                <span className="text-white font-bold text-3xl">A</span>
-              </div>
-              <div 
-                className="text-white font-bold text-4xl"
-                style={{
-                  opacity: currentStep >= 1 ? 1 : 0,
-                  transform: `translateX(${currentStep >= 1 ? 0 : 50}px)`,
-                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
-                }}
-              >
-                giledge
-              </div>
+          <div className="relative flex justify-center">
+            <div 
+              style={{
+                transform: `scale(${currentStep >= 2 ? 1.1 : 1})`,
+                transition: 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                opacity: currentStep >= 1 ? 1 : 0,
+                transform: `translateX(${currentStep >= 1 ? 0 : 50}px)`,
+                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
+              }}
+            >
+              <Logo size="xlarge" />
             </div>
           </div>
         </div>

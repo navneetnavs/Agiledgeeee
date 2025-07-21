@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
+import Logo from './Logo'
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -156,17 +157,10 @@ const Navbar = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-blue-600 rounded-xl blur-lg opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
               
               {/* Logo Container */}
-              <div className="relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-3 shadow-lg border border-gray-700 group-hover:border-green-500 transition-all duration-300">
-                <div className="flex items-center space-x-2">
-                  <div className="w-8 h-8 bg-gradient-to-r from-green-400 to-blue-500 rounded-lg flex items-center justify-center">
-                    <span className="text-white font-bold text-lg">A</span>
-                  </div>
-                  <div className="text-white font-bold text-xl">giledge</div>
-                </div>
+              <div className="relative">
+                <Logo size="default" />
               </div>
             </div>
-            
-
           </div>
 
           {/* Desktop Navigation */}
