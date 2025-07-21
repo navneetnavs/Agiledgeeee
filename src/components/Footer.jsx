@@ -240,8 +240,8 @@ const Footer = () => {
                 <div>
                   <p className="text-gray-300 font-medium">Our Office</p>
                   <p className="text-gray-400 text-sm">
-                    Wisconsin Ave, Suite 700<br />
-                    Chevy Chase, Maryland 20815
+                  Av. da Liberdade, 245, 6º Andar<br />
+                  1250-143 Lisboa, Portugal
                   </p>
                 </div>
               </div>

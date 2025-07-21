@@ -13,7 +13,8 @@ const Navbar = () => {
     { name: '🇮🇳 India', flag: '🇮🇳' },
     { name: '🇦🇺 Australia', flag: '🇦🇺' },
     { name: '🇨🇦 Canada', flag: '🇨🇦' },
-    { name: '🇬🇧 United Kingdom', flag: '🇬🇧' }
+    { name: '🇬🇧 United Kingdom', flag: '🇬🇧' },
+    { name: '🇵🇹 Portugal', flag: '🇵🇹' }
   ]
 
   const servicesData = [
