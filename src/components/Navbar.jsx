@@ -151,7 +151,9 @@ const Navbar = () => {
               
               {/* Logo Container */}
               <div className="relative">
-                <Logo size="default" />
+                <Link to="/">
+                  <Logo size="default" />
+                </Link>
               </div>
             </div>
           </div>
