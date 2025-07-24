@@ -309,7 +309,7 @@ const Footer = () => {
         <div className="container mx-auto px-6 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-gray-400 text-sm">
-              © 2024 <span className="text-green-400 font-semibold">Agiledge Technologies</span>. All Rights Reserved.
+              © 2025 <span className="text-green-400 font-semibold">Agiledge Technologies</span>. All Rights Reserved.
             </div>
             <div className="flex flex-wrap justify-center md:justify-end space-x-6 text-sm">
               {[

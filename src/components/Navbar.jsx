@@ -1,22 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react'
 import Logo from './Logo'
+import { useTranslation } from 'react-i18next'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState(null)
-  const [selectedCountry, setSelectedCountry] = useState('🇺🇸 United States')
-  const [isCountryOpen, setIsCountryOpen] = useState(false)
   const countryDropdownRef = useRef(null)
-
-  const countries = [
-    { name: '🇺🇸 United States', flag: '🇺🇸' },
-    { name: '🇮🇳 India', flag: '🇮🇳' },
-    { name: '🇦🇺 Australia', flag: '🇦🇺' },
-    { name: '🇨🇦 Canada', flag: '🇨🇦' },
-    { name: '🇬🇧 United Kingdom', flag: '🇬🇧' },
-    { name: '🇵🇹 Portugal', flag: '🇵🇹' }
-  ]
 
   const servicesData = [
     {
@@ -129,13 +120,15 @@ const Navbar = () => {
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (countryDropdownRef.current && !countryDropdownRef.current.contains(event.target)) {
-        setIsCountryOpen(false)
+        // setIsCountryOpen(false) // This line is removed
       }
     }
 
     document.addEventListener('mousedown', handleClickOutside)
     return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [])
+
+  const { t } = useTranslation()
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
@@ -166,51 +159,11 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
             
-            {/* Hire Us Dropdown */}
-            <div className="relative group">
-              <button
-                onMouseEnter={() => setActiveDropdown('hire')}
-                onMouseLeave={() => setActiveDropdown(null)}
-                className="flex items-center space-x-2 px-4 py-2 rounded-lg text-gray-700 hover:text-green-600 font-medium transition-all duration-300 hover:bg-green-50 group"
-              >
-                <span>Hire Us</span>
-                <svg className="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              
-              {activeDropdown === 'hire' && (
-                <div
-                  onMouseEnter={() => setActiveDropdown('hire')}
-                  onMouseLeave={() => setActiveDropdown(null)}
-                  className="absolute top-full left-0 mt-2 w-80 bg-white rounded-xl shadow-2xl border border-gray-100 p-6 opacity-100 scale-100 transition-all duration-200"
-                >
-                  <div className="space-y-4">
-                    {hireData.map((section, index) => (
-                      <div key={index} className="space-y-3">
-                        <h3 className="text-green-600 font-semibold text-sm flex items-center">
-                          <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
-                          {section.title}
-                        </h3>
-                        <ul className="space-y-2">
-                          {section.items.map((item, itemIndex) => (
-                            <li key={itemIndex}>
-                              <a
-                                href="#"
-                                className="text-gray-700 hover:text-green-600 text-sm transition-all duration-200 flex items-center group/item"
-                              >
-                                <span className="w-1 h-1 bg-gray-300 rounded-full mr-3 group-hover/item:bg-green-500 transition-colors duration-200"></span>
-                                {item}
-                              </a>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
+            {/* Home */}
+            <Link to="/" className="px-4 py-2 rounded-lg text-gray-700 hover:text-green-600 font-medium transition-all duration-300 hover:bg-green-50">Home</Link>
+            
+            {/* About Us */}
+            <Link to="/about" className="px-4 py-2 rounded-lg text-gray-700 hover:text-green-600 font-medium transition-all duration-300 hover:bg-green-50">{t('About Us')}</Link>
             
             {/* Services Dropdown */}
             <div className="relative group">
@@ -304,59 +257,15 @@ const Navbar = () => {
               )}
             </div>
             
-            {/* About Us */}
-            <a href="#" className="px-4 py-2 rounded-lg text-gray-700 hover:text-green-600 font-medium transition-all duration-300 hover:bg-green-50">
-              About Us
-            </a>
-            
             {/* Career */}
-            <a href="#" className="px-4 py-2 rounded-lg text-gray-700 hover:text-green-600 font-medium transition-all duration-300 hover:bg-green-50">
-              Careers
-            </a>
+            <a href="#" className="px-4 py-2 rounded-lg text-gray-700 hover:text-green-600 font-medium transition-all duration-300 hover:bg-green-50">{t('Careers')}</a>
           </div>
 
           {/* Right Side - Country Selector & CTA */}
           <div className="flex items-center space-x-4">
             
-            {/* Country Selector */}
-            <div className="relative" ref={countryDropdownRef}>
-              <button
-                onClick={() => setIsCountryOpen(!isCountryOpen)}
-                className="flex items-center space-x-2 px-4 py-2 rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium transition-all duration-300 group"
-              >
-                <span className="text-lg">{selectedCountry.split(' ')[0]}</span>
-                <span className="text-sm hidden sm:block">{selectedCountry.split(' ').slice(1).join(' ')}</span>
-                <svg className="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              
-                              {isCountryOpen && (
-                  <div className="absolute top-full right-0 mt-2 w-48 bg-white rounded-xl shadow-2xl border border-gray-100 py-2 opacity-100 scale-100 transition-all duration-200">
-                  {countries.map((country, index) => (
-                    <button
-                      key={index}
-                      onClick={() => {
-                        setSelectedCountry(country.name)
-                        setIsCountryOpen(false)
-                      }}
-                      className="w-full px-4 py-2 text-left text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-200 flex items-center space-x-3"
-                    >
-                      <span className="text-lg">{country.flag}</span>
-                      <span className="text-sm">{country.name.split(' ').slice(1).join(' ')}</span>
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
-
             {/* CTA Button */}
-            <button className="hidden sm:flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-green-500 to-blue-600 text-white font-semibold rounded-xl hover:from-green-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-              <span>Get Started</span>
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-            </button>
+            <Link to="/contact" className="px-6 py-3 bg-gradient-to-r from-green-500 to-blue-600 text-white font-semibold rounded-xl hover:from-green-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl ml-4">Contact Us</Link>
 
             {/* Mobile Menu Button */}
             <button
@@ -374,11 +283,11 @@ const Navbar = () => {
         {isMobileMenuOpen && (
           <div className="lg:hidden bg-white border-t border-gray-100 py-4 opacity-100 scale-100 transition-all duration-200">
             <div className="space-y-4">
-              <a href="#" className="block px-4 py-2 text-gray-700 hover:text-green-600 font-medium">Hire Us</a>
-              <a href="#" className="block px-4 py-2 text-gray-700 hover:text-green-600 font-medium">Services</a>
-              <a href="#" className="block px-4 py-2 text-gray-700 hover:text-green-600 font-medium">Resources</a>
-              <a href="#" className="block px-4 py-2 text-gray-700 hover:text-green-600 font-medium">About Us</a>
-              <a href="#" className="block px-4 py-2 text-gray-700 hover:text-green-600 font-medium">Career</a>
+              <Link to="/" className="block px-4 py-2 text-gray-700 hover:text-green-600 font-medium">Home</Link>
+              <Link to="/about" className="block px-4 py-2 text-gray-700 hover:text-green-600 font-medium">{t('navbar.about')}</Link>
+              <a href="#" className="block px-4 py-2 text-gray-700 hover:text-green-600 font-medium">{t('navbar.services')}</a>
+              <a href="#" className="block px-4 py-2 text-gray-700 hover:text-green-600 font-medium">{t('navbar.resources')}</a>
+              <a href="#" className="block px-4 py-2 text-gray-700 hover:text-green-600 font-medium">{t('navbar.careers')}</a>
               <button className="w-full mx-4 px-6 py-3 bg-gradient-to-r from-green-500 to-blue-600 text-white font-semibold rounded-xl">
                 Get Started
               </button>
