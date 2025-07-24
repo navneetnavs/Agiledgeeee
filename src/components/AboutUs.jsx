@@ -127,6 +127,33 @@ const AboutUs = () => {
           0% { transform: translateY(0) scale(1); }
           100% { transform: translateY(-30px) scale(1.08); }
         }
+        .offer-card {
+          transition: transform 0.7s cubic-bezier(0.22,0.61,0.36,1), background 0.7s cubic-bezier(0.22,0.61,0.36,1), box-shadow 0.7s cubic-bezier(0.22,0.61,0.36,1);
+          will-change: transform, background, box-shadow;
+        }
+        .offer-card:hover {
+          transform: scale(1.12) translateY(-16px) rotateZ(2deg);
+          box-shadow: 0 32px 80px 0 rgba(34,197,94,0.12), 0 8px 32px 0 rgba(59,130,246,0.10);
+          z-index: 3;
+        }
+        .offer-card[data-offer='0']:hover {
+          background: linear-gradient(135deg, #e0f2fe 0%, #d1fae5 100%) !important;
+        }
+        .offer-card[data-offer='1']:hover {
+          background: linear-gradient(135deg, #d1fae5 0%, #e0f2fe 100%) !important;
+        }
+        .offer-card[data-offer='2']:hover {
+          background: linear-gradient(135deg, #fce7f3 0%, #fef9c3 100%) !important;
+        }
+        .offer-card[data-offer='3']:hover {
+          background: linear-gradient(135deg, #fef9c3 0%, #d1fae5 100%) !important;
+        }
+        .offer-card[data-offer='4']:hover {
+          background: linear-gradient(135deg, #ede9fe 0%, #fce7f3 100%) !important;
+        }
+        .offer-card[data-offer='5']:hover {
+          background: linear-gradient(135deg, #fef3c7 0%, #e0f2fe 100%) !important;
+        }
       `}</style>
       <div className="bg-gradient-to-br from-blue-50 via-white to-green-50 min-h-screen flex flex-col relative overflow-x-hidden">
         {/* Animated Gradient/Floating Shapes */}
@@ -177,7 +204,7 @@ const AboutUs = () => {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {offerCards.map((card, i) => (
-              <div key={i} ref={offerCardRefs[i]} className="fade-slide card-anim bg-white/80 backdrop-blur-lg rounded-2xl shadow-xl p-8 flex flex-col items-center text-center border border-white/30">
+              <div key={i} data-offer={i} className={`offer-card bg-gradient-to-br ${card.color || 'from-white to-white'} rounded-2xl shadow-xl p-8 flex flex-col items-center text-center border border-white/30`}>
                 <div className="text-4xl mb-4">{card.icon}</div>
                 <h4 className="text-xl font-semibold text-gray-900 mb-2">{card.title}</h4>
                 <p className="text-gray-600 text-base">{card.desc}</p>
@@ -186,7 +213,53 @@ const AboutUs = () => {
           </div>
         </section>
 
-       
+        {/* Agiledge Insights Section (before CTA) */}
+        <section className="py-20 px-4 md:px-0 max-w-6xl mx-auto flex flex-col items-center">
+          <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-3 text-center">Agiledge Insights for Your Cloud Success</h2>
+          <p className="text-lg text-gray-700 mb-12 text-center max-w-2xl">Track your cloud performance, benchmark with industry leaders, and plan your next deployment—all in one place.</p>
+          <div className="flex flex-col md:flex-row gap-8 justify-center items-center">
+            {/* Progress Card */}
+            <div className="bg-gradient-to-br from-blue-100 to-white rounded-2xl shadow-xl p-6 w-80 transform -rotate-6 hover:rotate-0 transition-transform duration-300">
+              <div className="text-blue-700 font-semibold mb-2">Cloud Uptime</div>
+              <div className="flex items-center gap-4 mb-4">
+                <span className="text-3xl font-bold text-blue-600">99.99%</span>
+                <span className="text-gray-500">last 30 days</span>
+              </div>
+              <div className="flex justify-between text-sm text-gray-600">
+                <div>
+                  <div className="font-bold text-green-600">0</div>
+                  <div>Incidents</div>
+                </div>
+                <div>
+                  <div className="font-bold text-blue-600">24/7</div>
+                  <div>Monitoring</div>
+                </div>
+              </div>
+            </div>
+            {/* Clients Card */}
+            <div className="bg-gradient-to-br from-pink-100 to-white rounded-2xl shadow-xl p-6 w-80 transform rotate-3 hover:rotate-0 transition-transform duration-300">
+              <div className="text-pink-700 font-semibold mb-2">Our Clients</div>
+              <ul className="space-y-2">
+                <li className="flex items-center gap-2"><span className="w-6 h-6 rounded-full bg-blue-400 flex items-center justify-center text-white font-bold">A</span> Acme Corp</li>
+                <li className="flex items-center gap-2"><span className="w-6 h-6 rounded-full bg-green-400 flex items-center justify-center text-white font-bold">B</span> BetaSoft</li>
+                <li className="flex items-center gap-2"><span className="w-6 h-6 rounded-full bg-purple-400 flex items-center justify-center text-white font-bold">C</span> Cloudify</li>
+                <li className="flex items-center gap-2"><span className="w-6 h-6 rounded-full bg-yellow-400 flex items-center justify-center text-white font-bold">D</span> DataEdge</li>
+              </ul>
+            </div>
+            {/* Deployment Calendar Card */}
+            <div className="bg-gradient-to-br from-yellow-100 to-white rounded-2xl shadow-xl p-6 w-80 transform rotate-6 hover:rotate-0 transition-transform duration-300">
+              <div className="text-yellow-700 font-semibold mb-2">Upcoming Deployments</div>
+              <div className="bg-white rounded-xl shadow p-4">
+                <div className="text-gray-700 font-bold mb-2">May 2024</div>
+                <div className="flex flex-wrap gap-2">
+                  <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold">May 10: BetaSoft</span>
+                  <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-semibold">May 18: Acme Corp</span>
+                  <span className="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-xs font-semibold">May 23: Cloudify</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Let's Build Together CTA */}
         <section className="py-16 px-6 md:px-0 max-w-3xl mx-auto fade-slide text-center z-10" ref={ctaRef}>
