@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const icons = {
   phone: (
@@ -22,9 +22,30 @@ const icons = {
 }
 
 const ContactUs = () => {
+  const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' })
+  const [error, setError] = useState('')
+  const [success, setSuccess] = useState('')
+
+  const handleChange = e => {
+    setForm({ ...form, [e.target.name]: e.target.value })
+    setError('')
+    setSuccess('')
+  }
+
+  const handleSubmit = e => {
+    e.preventDefault()
+    if (!form.name || !form.email || !form.subject || !form.message) {
+      setError('All details are required')
+      return
+    }
+    // Here you would send to Google Sheets or your backend
+    setSuccess('Message sent!')
+    setForm({ name: '', email: '', subject: '', message: '' })
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50 flex flex-col">
-      {/* Hero Section */}
+      {/* Hero Section with animated gradient background */}
       <div className="relative w-full h-64 md:h-80 flex items-end justify-start overflow-hidden rounded-b-3xl shadow-lg mb-12">
         <img
           src="https://images.unsplash.com/photo-1465101162946-4377e57745c3?auto=format&fit=crop&w=1200&q=80"
@@ -32,8 +53,8 @@ const ContactUs = () => {
           className="absolute inset-0 w-full h-full object-cover object-center"
           style={{filter: 'brightness(0.7)'}}
         />
-        <div className="relative z-10 p-8 md:p-12">
-          <h1 className="text-4xl md:text-5xl font-black text-white drop-shadow-lg">Contact Us</h1>
+        <div className="relative z-10 p-8 md:p-12 w-full flex items-end">
+          <h1 className="text-4xl md:text-5xl font-black text-white drop-shadow-lg mx-auto">Contacts</h1>
         </div>
       </div>
 
@@ -83,11 +104,13 @@ const ContactUs = () => {
         <div className="flex-1 bg-white/80 rounded-2xl shadow-lg p-8 flex flex-col justify-center">
           <h3 className="text-2xl font-bold text-gray-900 mb-4">Get in Touch</h3>
           <p className="text-gray-600 mb-4 text-sm">Define your goals and identify areas where Agiledge can add value to your business.</p>
-          <form className="flex flex-col gap-4">
-            <input type="text" placeholder="Full name" className="px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-400 outline-none bg-white/90" />
-            <input type="email" placeholder="Email" className="px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-400 outline-none bg-white/90" />
-            <input type="text" placeholder="Subject" className="px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-400 outline-none bg-white/90" />
-            <textarea placeholder="Message" rows={4} className="px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-400 outline-none bg-white/90" />
+          {error && <div className="mb-4 text-red-600 font-semibold text-center">{error}</div>}
+          {success && <div className="mb-4 text-green-600 font-semibold text-center">{success}</div>}
+          <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+            <input name="name" value={form.name} onChange={handleChange} type="text" placeholder="Full name" className="px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-400 outline-none bg-white/90" />
+            <input name="email" value={form.email} onChange={handleChange} type="email" placeholder="Email" className="px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-400 outline-none bg-white/90" />
+            <input name="subject" value={form.subject} onChange={handleChange} type="text" placeholder="Subject" className="px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-400 outline-none bg-white/90" />
+            <textarea name="message" value={form.message} onChange={handleChange} placeholder="Message" rows={4} className="px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-400 outline-none bg-white/90" />
             <button type="submit" className="mt-2 px-6 py-3 bg-gradient-to-r from-green-500 to-blue-600 text-white font-semibold rounded-lg shadow hover:from-green-600 hover:to-blue-700 transition-all">Send a message</button>
           </form>
         </div>
