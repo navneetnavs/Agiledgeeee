@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { motion } from 'framer-motion'
 
 const icons = {
   phone: (
@@ -20,6 +21,65 @@ const icons = {
     <svg className="w-5 h-5 text-gray-700" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.373 0 12c0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.31.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.52 11.52 0 013.003-.404c1.018.005 2.045.138 3.003.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222v3.293c0 .322.218.694.825.576C20.565 21.796 24 17.299 24 12c0-6.627-5.373-12-12-12z" /></svg>
   ),
 }
+
+const ContactHero = () => (
+  <section className="relative flex items-center justify-center min-h-[60vh] w-full overflow-hidden px-4">
+    {/* Floating Gradient Blobs */}
+    <div className="absolute -top-20 -left-20 w-96 h-96 bg-gradient-to-tr from-blue-400/30 to-purple-400/30 rounded-full blur-3xl animate-pulse" />
+    <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-tr from-green-300/30 to-cyan-400/30 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1s' }} />
+    <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-to-tr from-pink-400/20 to-indigo-400/20 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '2s', transform: 'translate(-50%, -50%)' }} />
+    {/* Content */}
+    <div className="relative z-10 w-full max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-stretch gap-10 md:gap-16 py-16">
+      {/* Images */}
+      <div className="flex flex-row gap-6 md:gap-8 items-center md:w-1/2 w-full justify-center mb-8 md:mb-0">
+        <motion.img
+          initial={{ opacity: 0, x: -40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80"
+          alt="Agiledge Team Collaboration"
+          className="w-40 h-40 md:w-56 md:h-56 object-cover rounded-2xl border-4 border-white relative z-10"
+        />
+        <motion.img
+          initial={{ opacity: 0, x: 40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
+          src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=600&q=80"
+          alt="Modern Workspace"
+          className="w-32 h-32 md:w-44 md:h-44 object-cover rounded-2xl border-4 border-white -ml-8 md:-ml-12 relative z-0"
+        />
+      </div>
+      {/* Text Content */}
+      <div className="flex-1 flex flex-col justify-center items-start text-left">
+        <motion.h1
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mb-6"
+        >
+          Let’s Build Something Smart, Together.
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
+          className="text-lg md:text-xl text-gray-700 mb-8 max-w-xl"
+        >
+          Reach out to Agiledge for cloud engineering, DevOps automation, and digital transformation solutions tailored to your business.
+        </motion.p>
+        <motion.a
+          href="#contact-form"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
+          className="inline-block px-8 py-4 rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-green-400 text-white font-bold text-lg hover:scale-105 hover:shadow-2xl transition-transform transition-shadow duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        >
+          Talk to Our Team
+        </motion.a>
+      </div>
+    </div>
+  </section>
+)
 
 const ContactUs = () => {
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' })
@@ -44,20 +104,8 @@ const ContactUs = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50 flex flex-col">
-      {/* Hero Section with animated gradient background */}
-      <div className="relative w-full h-64 md:h-80 flex items-end justify-start overflow-hidden rounded-b-3xl shadow-lg mb-12">
-        <img
-          src="https://images.unsplash.com/photo-1465101162946-4377e57745c3?auto=format&fit=crop&w=1200&q=80"
-          alt="Contact Agiledge Cloud"
-          className="absolute inset-0 w-full h-full object-cover object-center"
-          style={{filter: 'brightness(0.7)'}}
-        />
-        <div className="relative z-10 p-8 md:p-12 w-full flex items-end">
-          <h1 className="text-4xl md:text-5xl font-black text-white drop-shadow-lg mx-auto">Contacts</h1>
-        </div>
-      </div>
-
+    <div className="min-h-screen w-full bg-gradient-to-br from-white via-blue-50 to-cyan-100 flex flex-col">
+      <ContactHero />
       {/* Main Content */}
       <div className="max-w-6xl mx-auto w-full flex flex-col md:flex-row gap-10 px-4 md:px-0 mb-12 items-center md:items-stretch">
         {/* Left: Info */}
@@ -101,7 +149,7 @@ const ContactUs = () => {
           </div>
         </div>
         {/* Right: Form */}
-        <div className="flex-1 bg-white/80 rounded-2xl shadow-lg p-8 flex flex-col justify-center">
+        <div className="flex-1 rounded-2xl p-8 flex flex-col justify-center">
           <h3 className="text-2xl font-bold text-gray-900 mb-4">Get in Touch</h3>
           <p className="text-gray-600 mb-4 text-sm">Define your goals and identify areas where Agiledge can add value to your business.</p>
           {error && <div className="mb-4 text-red-600 font-semibold text-center">{error}</div>}
@@ -111,13 +159,12 @@ const ContactUs = () => {
             <input name="email" value={form.email} onChange={handleChange} type="email" placeholder="Email" className="px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-400 outline-none bg-white/90" />
             <input name="subject" value={form.subject} onChange={handleChange} type="text" placeholder="Subject" className="px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-400 outline-none bg-white/90" />
             <textarea name="message" value={form.message} onChange={handleChange} placeholder="Message" rows={4} className="px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-400 outline-none bg-white/90" />
-            <button type="submit" className="mt-2 px-6 py-3 bg-gradient-to-r from-green-500 to-blue-600 text-white font-semibold rounded-lg shadow hover:from-green-600 hover:to-blue-700 transition-all">Send a message</button>
+            <button type="submit" className="mt-2 px-6 py-3 bg-gradient-to-r from-green-500 to-blue-600 text-white font-semibold rounded-lg hover:from-green-600 hover:to-blue-700 transition-all">Send a message</button>
           </form>
         </div>
       </div>
-
       {/* Map Section */}
-      <div className="w-full max-w-6xl mx-auto rounded-2xl overflow-hidden shadow-lg mb-16">
+      <div className="w-full max-w-6xl mx-auto rounded-2xl overflow-hidden mb-16">
         <iframe
           title="Agiledge Porto Office Map"
           src="https://www.google.com/maps?q=Rua+Augusto+Rosa+79+Porto+4000-098&output=embed"
@@ -129,6 +176,7 @@ const ContactUs = () => {
           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
+      {/* Footer (if present) will also use the same background */}
     </div>
   )
 }
