@@ -181,9 +181,9 @@ const AboutUs = () => {
         {/* Who We Are Split Section */}
         <section className="py-16 px-6 md:px-0 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center fade-slide z-10" ref={whoRef}>
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Who We Are</h2>
-            <p className="text-gray-700 mb-4">Agiledge is a cloud-first engineering company headquartered in Lisbon, Portugal. We empower teams to build with confidence by providing modern solutions in cloud engineering, DevOps automation, and scalable infrastructure.</p>
-            <ul className="list-disc pl-6 text-blue-700 font-medium space-y-1">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4 tracking-tight leading-tight">Who We Are</h2>
+            <p className="font-inter text-gray-700 mb-4">Agiledge is a cloud-first engineering company headquartered in Lisbon, Portugal. We empower teams to build with confidence by providing modern solutions in cloud engineering, DevOps automation, and scalable infrastructure.</p>
+            <ul className="list-disc pl-6 text-blue-700 font-inter font-medium space-y-1">
               <li>Cloud-native experts with real-world experience</li>
               <li>End-to-end partnership, not just a vendor</li>
               <li>Proven results for startups and enterprises</li>
@@ -191,23 +191,24 @@ const AboutUs = () => {
           </div>
           <div className="flex flex-col gap-4 items-center">
             <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=facearea&w=400&q=80" alt="Team" className="w-64 h-48 object-cover rounded-2xl shadow-lg border-4 border-white" />
-            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=facearea&w=400&q=80" alt="Cloud" className="w-40 h-32 object-cover rounded-2xl shadow-lg border-4 border-white" />
+            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80" alt="Tech Collaboration" className="w-40 h-32 object-cover rounded-2xl shadow-lg border-4 border-white" />
           </div>
         </section>
 
         {/* What We Offer */}
         <section className="py-12 px-6 md:px-0 max-w-6xl mx-auto fade-slide z-10" ref={offerRef}>
           <div className="text-center mb-8">
-            <span className="text-2xl">🛠️</span>
-            <span className="uppercase tracking-widest text-blue-700 font-semibold text-sm ml-2">What We Offer</span>
-            <p className="text-lg text-gray-700 mt-2">Our core services help you build, automate, and scale with confidence.</p>
+            <span className="text-2xl"></span>
+            <h2 className="font-heading font-bold text-2xl md:text-4xl text-blue-700 tracking-tight leading-tight uppercase mt-2 mb-2">What We Offer</h2>
+            <div className="mx-auto w-16 h-1 bg-gradient-to-r from-blue-500 to-green-400 rounded-full mb-4"></div>
+            <p className="font-inter text-lg text-gray-700 mt-2">Our core services help you build, automate, and scale with confidence.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {offerCards.map((card, i) => (
               <div key={i} data-offer={i} className={`offer-card bg-gradient-to-br ${card.color || 'from-white to-white'} rounded-2xl shadow-xl p-8 flex flex-col items-center text-center border border-white/30`}>
                 <div className="text-4xl mb-4">{card.icon}</div>
-                <h4 className="text-xl font-semibold text-gray-900 mb-2">{card.title}</h4>
-                <p className="text-gray-600 text-base">{card.desc}</p>
+                <h4 className="font-heading text-xl font-semibold text-gray-900 mb-2">{card.title}</h4>
+                <p className="font-inter text-gray-600 text-base">{card.desc}</p>
               </div>
             ))}
           </div>

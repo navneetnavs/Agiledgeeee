@@ -41,6 +41,13 @@ const Freqques = () => {
       answer: "Project timelines vary based on scope, but most engagements range from 4 to 12 weeks, including assessment, setup, automation, and knowledge transfer.",
       icon: "⏱️",
       color: "from-red-500 to-red-600"
+    },
+    {
+      id: 6,
+      question: "Does Agiledge help automate CI/CD pipelines and deployments?",
+      answer: "Yes, we specialize in automating CI/CD pipelines using tools like GitHub Actions, GitLab CI, Jenkins, and more, ensuring faster, safer, and more reliable deployments for your business.",
+      icon: "🤖",
+      color: "from-blue-400 to-green-400"
     }
   ]
 
