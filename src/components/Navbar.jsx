@@ -167,6 +167,12 @@ const Navbar = () => {
             {/* About Us */}
             <Link to="/about" className="px-4 py-2 rounded-lg text-gray-700 hover:text-green-600 font-medium transition-all duration-300 hover:bg-green-50">{t('About Us')}</Link>
             
+            {/* Contact Us
+            <Link to="/contact" className="px-4 py-2 rounded-lg text-gray-700 hover:text-green-600 font-medium transition-all duration-300 hover:bg-green-50">Contact</Link> */}
+            
+            {/* Careers */}
+            <Link to="/careers" className="px-4 py-2 rounded-lg text-gray-700 hover:text-green-600 font-medium transition-all duration-300 hover:bg-green-50">Careers</Link>
+            
             {/* Services Dropdown */}
             <div className="relative group">
               <button
@@ -259,8 +265,6 @@ const Navbar = () => {
               )}
             </div>
             
-            {/* Career */}
-            <a href="#" className="px-4 py-2 rounded-lg text-gray-700 hover:text-green-600 font-medium transition-all duration-300 hover:bg-green-50">{t('Careers')}</a>
           </div>
 
           {/* Right Side - Country Selector & CTA */}
@@ -286,10 +290,9 @@ const Navbar = () => {
           <div className="lg:hidden bg-white border-t border-gray-100 py-4 opacity-100 scale-100 transition-all duration-200">
             <div className="space-y-4">
               <Link to="/" className="block px-4 py-2 text-gray-700 hover:text-green-600 font-medium">Home</Link>
-              <Link to="/about" className="block px-4 py-2 text-gray-700 hover:text-green-600 font-medium">{t('navbar.about')}</Link>
-              <a href="#" className="block px-4 py-2 text-gray-700 hover:text-green-600 font-medium">{t('navbar.services')}</a>
-              <a href="#" className="block px-4 py-2 text-gray-700 hover:text-green-600 font-medium">{t('navbar.resources')}</a>
-              <a href="#" className="block px-4 py-2 text-gray-700 hover:text-green-600 font-medium">{t('navbar.careers')}</a>
+              <Link to="/about" className="block px-4 py-2 text-gray-700 hover:text-green-600 font-medium">About Us</Link>
+              <Link to="/contact" className="block px-4 py-2 text-gray-700 hover:text-green-600 font-medium">Contact</Link>
+              <Link to="/careers" className="block px-4 py-2 text-gray-700 hover:text-green-600 font-medium">Careers</Link>
               <button className="w-full mx-4 px-6 py-3 bg-gradient-to-r from-green-500 to-blue-600 text-white font-semibold rounded-xl">
                 Get Started
               </button>

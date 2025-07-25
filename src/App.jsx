@@ -9,6 +9,7 @@ import SplashScreen from './components/SplashScreen'
 import ClientFeedback from './components/ClientFeedback'
 import AboutUs from './components/AboutUs'
 import ContactUs from './components/ContactUs'
+import Careers from './components/Careers'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
         <Routes>
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contact" element={<ContactUs />} />
+          <Route path="/careers" element={<Careers />} />
           <Route path="/" element={
             <main>
               <HeroSection />
