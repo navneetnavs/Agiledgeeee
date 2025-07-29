@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Navbar from './components/Navbar'
 import HeroSection from './components/HeroSection'
 import Footer from './components/Footer'
@@ -10,7 +10,18 @@ import SplashScreen from './components/SplashScreen'
 import AboutUs from './components/AboutUs'
 import ContactUs from './components/ContactUs'
 import Careers from './components/Careers'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
+
+// Component to handle scroll to top on route changes
+function ScrollToTop() {
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
+
+  return null
+}
 
 function App() {
   const [showSplash, setShowSplash] = useState(true)
@@ -25,6 +36,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <div className="min-h-screen bg-gray-50">
         <Navbar />
         <Routes>
