@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const ServicesSection = () => {
+  const navigate = useNavigate();
   const [scrollDirection, setScrollDirection] = useState('down')
   const [lastScrollY, setLastScrollY] = useState(0)
   const sectionRef = useRef(null)
@@ -154,14 +156,7 @@ const ServicesSection = () => {
             </div>
 
             <button 
-              onClick={() => {
-                const element = document.getElementById('contact');
-                if (element) {
-                  element.scrollIntoView({ behavior: 'smooth' });
-                } else {
-                  window.location.href = '/contact';
-                }
-              }}
+              onClick={() => navigate('/contact')}
               className="bg-gradient-to-r from-green-500 to-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:from-green-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
               Get Free Consultation

@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const HeroSection = () => {
+  const navigate = useNavigate();
   const [scrollY, setScrollY] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -181,14 +183,7 @@ const HeroSection = () => {
               </button>
               
               <button 
-                onClick={() => {
-                  const element = document.getElementById('contact');
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                  } else {
-                    window.location.href = '/contact';
-                  }
-                }}
+                onClick={() => navigate('/contact')}
                 className="group relative px-10 py-5 border-2 border-slate-600 text-slate-300 font-bold rounded-2xl hover:border-blue-400 hover:text-blue-300 transition-all duration-500 transform hover:scale-110 backdrop-blur-md bg-slate-900/20"
               >
                 <span className="flex items-center">
