@@ -119,72 +119,151 @@ const SplashScreen = ({ onComplete }) => {
             >
               <div className="w-16 h-16 relative">
                 <svg 
-                  viewBox="0 0 48 48" 
-                  className="w-full h-full"
+                  viewBox="0 0 64 64" 
+                  className="w-full h-full drop-shadow-lg"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  {/* Background Circle */}
-                  <circle 
-                    cx="24" 
-                    cy="24" 
-                    r="22" 
-                    fill="url(#gradient1)"
-                    stroke="url(#gradient2)"
+                  {/* Background with modern gradient */}
+                  <rect 
+                    x="4" y="4" width="56" height="56" rx="12" 
+                    fill="url(#bgGradient)" 
+                    stroke="url(#borderGradient)" 
                     strokeWidth="2"
+                    filter="url(#shadow)"
                   />
                   
-                  {/* Stylized "A" with tech elements */}
+                  {/* Main "A" with sharp, modern styling */}
                   <path 
-                    d="M16 36L24 12L32 36M20 28H28" 
-                    stroke="url(#gradient3)" 
-                    strokeWidth="3" 
+                    d="M20 48L32 16L44 48M26 36H38" 
+                    stroke="url(#mainGradient)" 
+                    strokeWidth="4" 
                     strokeLinecap="round" 
                     strokeLinejoin="round"
+                    filter="url(#glow)"
                   />
                   
-                  {/* Circuit/tech pattern elements */}
-                  <circle cx="18" cy="18" r="1.5" fill="#10B981" />
-                  <circle cx="30" cy="18" r="1.5" fill="#3B82F6" />
-                  <circle cx="18" cy="30" r="1.5" fill="#8B5CF6" />
-                  <circle cx="30" cy="30" r="1.5" fill="#10B981" />
-                  
-                  {/* Connecting lines for circuit effect */}
-                  <path d="M19.5 18H28.5" stroke="#10B981" strokeWidth="1" opacity="0.6" />
-                  <path d="M18 19.5V28.5" stroke="#3B82F6" strokeWidth="1" opacity="0.6" />
-                  <path d="M30 19.5V28.5" stroke="#8B5CF6" strokeWidth="1" opacity="0.6" />
-                  <path d="M19.5 30H28.5" stroke="#10B981" strokeWidth="1" opacity="0.6" />
-                  
-                  {/* Cloud/spark elements for cloud engineering */}
+                  {/* Cloud infrastructure elements */}
                   <path 
-                    d="M12 20C12 17.7909 13.7909 16 16 16C16.5 16 16.9 16.1 17.3 16.3C17.8 14.6 19.3 13.5 21 13.5C23.2 13.5 25 15.3 25 17.5C25 17.8 25 18.1 24.9 18.4C25.5 18.2 26.1 18.1 26.8 18.1C29.1 18.1 31 20 31 22.3C31 24.6 29.1 26.5 26.8 26.5H16C13.8 26.5 12 24.7 12 22.5V20Z" 
-                    fill="url(#gradient4)" 
-                    opacity="0.3"
+                    d="M16 28C16 24.6863 18.6863 22 22 22C22.8 22 23.5 22.2 24.1 22.5C24.8 20.4 26.8 19 29 19C32.3 19 35 21.7 35 25C35 25.4 35 25.8 34.9 26.2C35.6 26 36.3 25.9 37 25.9C40.3 25.9 43 28.6 43 31.9C43 35.2 40.3 37.9 37 37.9H22C18.7 37.9 16 35.2 16 31.9V28Z" 
+                    fill="url(#cloudGradient)" 
+                    opacity="0.7"
                   />
                   
-                  {/* Motion/speed lines for agility */}
-                  <path d="M36 16L40 20L36 24" stroke="#10B981" strokeWidth="2" strokeLinecap="round" opacity="0.7" />
-                  <path d="M36 20L40 24L36 28" stroke="#3B82F6" strokeWidth="2" strokeLinecap="round" opacity="0.5" />
+                  {/* DevOps automation circuit patterns */}
+                  <path d="M22 20L42 20" stroke="url(#lineGradient1)" strokeWidth="2" opacity="0.8" strokeLinecap="round" />
+                  <path d="M22 44L42 44" stroke="url(#lineGradient2)" strokeWidth="2" opacity="0.8" strokeLinecap="round" />
+                  <path d="M20 22L20 42" stroke="url(#lineGradient3)" strokeWidth="2" opacity="0.8" strokeLinecap="round" />
+                  <path d="M44 22L44 42" stroke="url(#lineGradient1)" strokeWidth="2" opacity="0.8" strokeLinecap="round" />
                   
-                  {/* Gradients */}
+                  {/* Infrastructure nodes */}
+                  <circle cx="22" cy="22" r="2" fill="url(#nodeGradient1)" opacity="0.9" />
+                  <circle cx="42" cy="22" r="2" fill="url(#nodeGradient2)" opacity="0.9" />
+                  <circle cx="22" cy="42" r="2" fill="url(#nodeGradient3)" opacity="0.9" />
+                  <circle cx="42" cy="42" r="2" fill="url(#nodeGradient1)" opacity="0.9" />
+                  
+                  {/* Speed/agility motion elements */}
+                  <path d="M48 18L54 24L48 30" stroke="url(#motionGradient1)" strokeWidth="3" strokeLinecap="round" opacity="0.8" />
+                  <path d="M48 24L54 30L48 36" stroke="url(#motionGradient2)" strokeWidth="3" strokeLinecap="round" opacity="0.6" />
+                  
+                  {/* Digital architecture grid */}
+                  <path d="M26 26L38 26" stroke="url(#gridGradient)" strokeWidth="1" opacity="0.4" strokeLinecap="round" />
+                  <path d="M26 30L38 30" stroke="url(#gridGradient)" strokeWidth="1" opacity="0.4" strokeLinecap="round" />
+                  <path d="M26 34L38 34" stroke="url(#gridGradient)" strokeWidth="1" opacity="0.4" strokeLinecap="round" />
+                  
+                  {/* Subtle inner glow for depth */}
+                  <circle cx="32" cy="32" r="26" fill="none" stroke="url(#innerGlow)" strokeWidth="1" opacity="0.2" />
+                  
+                  {/* Gradients and Effects */}
                   <defs>
-                    <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#1E293B" />
-                      <stop offset="100%" stopColor="#0F172A" />
+                    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#FFFFFF" />
+                      <stop offset="50%" stopColor="#F8FAFC" />
+                      <stop offset="100%" stopColor="#F1F5F9" />
                     </linearGradient>
-                    <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                    
+                    <linearGradient id="borderGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#10B981" />
+                      <stop offset="25%" stopColor="#3B82F6" />
+                      <stop offset="50%" stopColor="#8B5CF6" />
+                      <stop offset="75%" stopColor="#10B981" />
+                      <stop offset="100%" stopColor="#3B82F6" />
+                    </linearGradient>
+                    
+                    <linearGradient id="mainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#1E293B" />
+                      <stop offset="50%" stopColor="#334155" />
+                      <stop offset="100%" stopColor="#475569" />
+                    </linearGradient>
+                    
+                    <linearGradient id="cloudGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                       <stop offset="0%" stopColor="#10B981" />
                       <stop offset="50%" stopColor="#3B82F6" />
                       <stop offset="100%" stopColor="#8B5CF6" />
                     </linearGradient>
-                    <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#FFFFFF" />
-                      <stop offset="100%" stopColor="#E2E8F0" />
-                    </linearGradient>
-                    <linearGradient id="gradient4" x1="0%" y1="0%" x2="100%" y2="100%">
+                    
+                    <linearGradient id="lineGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
                       <stop offset="0%" stopColor="#10B981" />
                       <stop offset="100%" stopColor="#3B82F6" />
                     </linearGradient>
+                    
+                    <linearGradient id="lineGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#3B82F6" />
+                      <stop offset="100%" stopColor="#8B5CF6" />
+                    </linearGradient>
+                    
+                    <linearGradient id="lineGradient3" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stopColor="#8B5CF6" />
+                      <stop offset="100%" stopColor="#10B981" />
+                    </linearGradient>
+                    
+                    <linearGradient id="nodeGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#10B981" />
+                      <stop offset="100%" stopColor="#059669" />
+                    </linearGradient>
+                    
+                    <linearGradient id="nodeGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#3B82F6" />
+                      <stop offset="100%" stopColor="#2563EB" />
+                    </linearGradient>
+                    
+                    <linearGradient id="nodeGradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#8B5CF6" />
+                      <stop offset="100%" stopColor="#7C3AED" />
+                    </linearGradient>
+                    
+                    <linearGradient id="motionGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#10B981" />
+                      <stop offset="100%" stopColor="#3B82F6" />
+                    </linearGradient>
+                    
+                    <linearGradient id="motionGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#3B82F6" />
+                      <stop offset="100%" stopColor="#8B5CF6" />
+                    </linearGradient>
+                    
+                    <linearGradient id="gridGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#64748B" />
+                      <stop offset="100%" stopColor="#94A3B8" />
+                    </linearGradient>
+                    
+                    <linearGradient id="innerGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#10B981" />
+                      <stop offset="50%" stopColor="#3B82F6" />
+                      <stop offset="100%" stopColor="#8B5CF6" />
+                    </linearGradient>
+                    
+                    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+                      <feDropShadow dx="0" dy="3" stdDeviation="3" floodColor="#000000" floodOpacity="0.15"/>
+                    </filter>
+                    
+                    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                      <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+                      <feMerge> 
+                        <feMergeNode in="coloredBlur"/>
+                        <feMergeNode in="SourceGraphic"/>
+                      </feMerge>
+                    </filter>
                   </defs>
                 </svg>
               </div>
