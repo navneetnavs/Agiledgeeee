@@ -31,6 +31,14 @@ const WhyChoose = () => {
       icon: "🤝",
       color: "border-black",
       bgColor: "bg-gray-50"
+    },
+    {
+      id: 4,
+      title: "Cost-optimized solution",
+      description: "We deliver maximum value while minimizing costs through efficient resource utilization, cloud optimization, and smart technology choices. Our solutions are designed to provide the best ROI while maintaining high quality and performance standards.",
+      icon: "💰",
+      color: "border-green-500",
+      bgColor: "bg-green-50"
     }
   ]
 

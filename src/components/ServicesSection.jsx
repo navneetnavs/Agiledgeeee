@@ -105,7 +105,7 @@ const ServicesSection = () => {
   }, [scrollDirection])
 
   return (
-    <section ref={sectionRef} className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
+    <section id="services" ref={sectionRef} className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
@@ -153,8 +153,18 @@ const ServicesSection = () => {
               </div>
             </div>
 
-            <button className="bg-gradient-to-r from-green-500 to-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:from-green-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
-              Explore All Services
+            <button 
+              onClick={() => {
+                const element = document.getElementById('contact');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                  window.location.href = '/contact';
+                }
+              }}
+              className="bg-gradient-to-r from-green-500 to-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:from-green-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+            >
+              Get Free Consultation
             </button>
           </div>
 
@@ -173,14 +183,9 @@ const ServicesSection = () => {
                   }}
                 >
                   {/* Card Header */}
-                  <div className="flex items-start justify-between mb-4">
+                  <div className="mb-4">
                     <div className={`w-12 h-12 bg-gradient-to-r ${service.color} rounded-lg flex items-center justify-center text-2xl`}>
                       {service.icon}
-                    </div>
-                    <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center group-hover:bg-gray-200 transition-colors duration-200">
-                      <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
                     </div>
                   </div>
 

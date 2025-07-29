@@ -1,5 +1,6 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Footer from './Footer'
+import CloudJourneyModal from './CloudJourneyModal'
 
 const impactStats = [
   { label: 'Cloud Migrations', value: '50+' },
@@ -81,6 +82,7 @@ function useScrollReveal(refs, className = 'reveal') {
 }
 
 const AboutUs = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false)
   const heroRef = useRef(null)
   const whoRef = useRef(null)
   const offerRef = useRef(null)
@@ -266,9 +268,20 @@ const AboutUs = () => {
         <section className="py-16 px-6 md:px-0 max-w-3xl mx-auto fade-slide text-center z-10" ref={ctaRef}>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Let’s Build Together</h2>
           <p className="text-gray-700 mb-6">We help businesses turn cloud challenges into competitive advantages. Whether you're just starting your cloud journey or managing complex, multi-cloud deployments — Agiledge has the tools, talent, and trust to take you further.</p>
-          <a href="/contact" className="inline-block px-8 py-4 bg-gradient-to-r from-green-500 to-blue-600 text-white font-semibold rounded-xl shadow-lg hover:from-green-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105">Start Your Cloud Journey</a>
+          <button 
+            onClick={() => setIsModalOpen(true)}
+            className="inline-block px-8 py-4 bg-gradient-to-r from-green-500 to-blue-600 text-white font-semibold rounded-xl shadow-lg hover:from-green-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
+          >
+            Start Your Cloud Journey
+          </button>
         </section>
       </div>
+      
+      {/* Cloud Journey Modal */}
+      <CloudJourneyModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+      />
     </>
   )
 }

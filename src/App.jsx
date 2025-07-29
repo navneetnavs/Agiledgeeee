@@ -6,7 +6,7 @@ import ServicesSection from './components/ServicesSection'
 import Freqques from './components/Freqques'
 import WhyChoose from './components/WhyChoose'
 import SplashScreen from './components/SplashScreen'
-import ClientFeedback from './components/ClientFeedback'
+// import ClientFeedback from './components/ClientFeedback'
 import AboutUs from './components/AboutUs'
 import ContactUs from './components/ContactUs'
 import Careers from './components/Careers'
@@ -36,7 +36,7 @@ function App() {
               <HeroSection />
               <ServicesSection />
               <WhyChoose />
-              <ClientFeedback />
+              {/* <ClientFeedback /> */}
               <Freqques />
             </main>
           } />

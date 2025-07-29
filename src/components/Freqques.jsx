@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
 
 const Freqques = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null)
@@ -231,13 +232,10 @@ const Freqques = () => {
             <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
               Our team of DevOps experts is here to help you understand how we can transform your infrastructure and accelerate your digital journey.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-gradient-to-r from-green-500 to-blue-600 text-white font-semibold rounded-xl hover:from-green-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-                Schedule a Consultation
-              </button>
-              <button className="px-8 py-4 border-2 border-gray-300 text-gray-700 font-semibold rounded-xl hover:border-green-500 hover:text-green-600 transition-all duration-300 transform hover:scale-105">
+            <div className="flex justify-center">
+              <Link to="/contact" className="px-8 py-4 bg-gradient-to-r from-green-500 to-blue-600 text-white font-semibold rounded-xl hover:from-green-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
                 Contact Our Team
-              </button>
+              </Link>
             </div>
           </div>
         </div>

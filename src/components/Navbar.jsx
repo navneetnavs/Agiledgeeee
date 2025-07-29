@@ -11,39 +11,12 @@ const Navbar = () => {
 
   const servicesData = [
     {
-      title: "Software Development",
-      items: [
-        "Custom Web Applications",
-        "Mobile App Development",
-        "E-commerce Solutions",
-        "API Development & Integration"
-      ]
-    },
-    {
       title: "Cloud & DevOps",
       items: [
-        "Cloud Migration",
-        "DevOps Automation",
-        "Kubernetes & Docker",
-        "CI/CD Pipeline Setup"
-      ]
-    },
-    {
-      title: "AI & Data",
-      items: [
-        "Machine Learning Solutions",
-        "Data Analytics",
-        "Business Intelligence",
-        "Predictive Analytics"
-      ]
-    },
-    {
-      title: "Digital Transformation",
-      items: [
-        "Legacy System Modernization",
-        "Process Automation",
-        "Digital Strategy Consulting",
-        "Technology Assessment"
+        { name: "Cloud Migration", link: "https://www.akamai.com/blog/cloud/cloud-migration-strategy?utm_source=chatgpt.com" },
+        { name: "DevOps Automation", link: "https://medium.com/pickme-engineering-blog/optimizing-devops-pipelines-mastering-kubernetes-docker-ci-cd-automation-a304e3df00c6" },
+        { name: "Kubernetes & Docker", link: "https://medium.com/pickme-engineering-blog/optimizing-devops-pipelines-mastering-kubernetes-docker-ci-cd-automation-a304e3df00c6" },
+        { name: "CI/CD Pipeline Setup", link: "https://medium.com/@vinoji2005/day-25-kubernetes-ci-cd-pipelines-a432dfdb6e96" }
       ]
     }
   ]
@@ -78,35 +51,7 @@ const Navbar = () => {
     }
   ]
 
-  const resourcesData = [
-    {
-      title: "Learning",
-      items: [
-        "Technical Blog",
-        "Case Studies",
-        "Webinars",
-        "Documentation"
-      ]
-    },
-    {
-      title: "Tools & Resources",
-      items: [
-        "Development Tools",
-        "API Libraries",
-        "Code Snippets",
-        "Best Practices"
-      ]
-    },
-    {
-      title: "Support",
-      items: [
-        "Knowledge Base",
-        "Community Forum",
-        "Technical Support",
-        "Training Programs"
-      ]
-    }
-  ]
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -203,11 +148,13 @@ const Navbar = () => {
                           {service.items.map((item, itemIndex) => (
                             <li key={itemIndex}>
                               <a
-                                href="#"
+                                href={item.link || "#"}
+                                target={item.link ? "_blank" : "_self"}
+                                rel={item.link ? "noopener noreferrer" : ""}
                                 className="text-gray-700 hover:text-green-600 text-sm transition-all duration-200 flex items-center group/item"
                               >
                                 <span className="w-1 h-1 bg-gray-300 rounded-full mr-3 group-hover/item:bg-green-500 transition-colors duration-200"></span>
-                                {item}
+                                {item.name}
                               </a>
                             </li>
                           ))}
@@ -219,51 +166,7 @@ const Navbar = () => {
               )}
             </div>
             
-            {/* Resources Dropdown */}
-            <div className="relative group">
-              <button
-                onMouseEnter={() => setActiveDropdown('resources')}
-                onMouseLeave={() => setActiveDropdown(null)}
-                className="flex items-center space-x-2 px-4 py-2 rounded-lg text-gray-700 hover:text-green-600 font-medium transition-all duration-300 hover:bg-green-50 group"
-              >
-                <span>Resources</span>
-                <svg className="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              
-              {activeDropdown === 'resources' && (
-                <div
-                  onMouseEnter={() => setActiveDropdown('resources')}
-                  onMouseLeave={() => setActiveDropdown(null)}
-                  className="absolute top-full left-0 mt-2 w-80 bg-white rounded-xl shadow-2xl border border-gray-100 p-6 opacity-100 scale-100 transition-all duration-200"
-                >
-                  <div className="space-y-4">
-                    {resourcesData.map((section, index) => (
-                      <div key={index} className="space-y-3">
-                        <h3 className="text-green-600 font-semibold text-sm flex items-center">
-                          <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
-                          {section.title}
-                        </h3>
-                        <ul className="space-y-2">
-                          {section.items.map((item, itemIndex) => (
-                            <li key={itemIndex}>
-                              <a
-                                href="#"
-                                className="text-gray-700 hover:text-green-600 text-sm transition-all duration-200 flex items-center group/item"
-                              >
-                                <span className="w-1 h-1 bg-gray-300 rounded-full mr-3 group-hover/item:bg-green-500 transition-colors duration-200"></span>
-                                {item}
-                              </a>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
+
             
           </div>
 

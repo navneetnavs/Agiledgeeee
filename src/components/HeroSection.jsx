@@ -162,22 +162,40 @@ const HeroSection = () => {
               }`}
               style={{ transitionDelay: '1000ms' }}
             >
-              <button className="group relative px-10 py-5 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 text-white font-bold rounded-2xl hover:from-blue-700 hover:via-purple-700 hover:to-indigo-700 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl hover:shadow-blue-500/40 border border-blue-400/30">
+              <button 
+                onClick={() => {
+                  const element = document.getElementById('services');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+                className="group relative px-10 py-5 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 text-white font-bold rounded-2xl hover:from-blue-700 hover:via-purple-700 hover:to-indigo-700 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl hover:shadow-blue-500/40 border border-blue-400/30"
+              >
                 <span className="relative z-10 flex items-center">
-                  <svg className="w-5 h-5 mr-3 group-hover:animate-pulse" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
+                  <svg className="w-5 h-5 mr-3 group-hover:animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
-                  Start Your Journey
+                  View Our Services
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-lg"></div>
               </button>
               
-              <button className="group relative px-10 py-5 border-2 border-slate-600 text-slate-300 font-bold rounded-2xl hover:border-blue-400 hover:text-blue-300 transition-all duration-500 transform hover:scale-110 backdrop-blur-md bg-slate-900/20">
+              <button 
+                onClick={() => {
+                  const element = document.getElementById('contact');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  } else {
+                    window.location.href = '/contact';
+                  }
+                }}
+                className="group relative px-10 py-5 border-2 border-slate-600 text-slate-300 font-bold rounded-2xl hover:border-blue-400 hover:text-blue-300 transition-all duration-500 transform hover:scale-110 backdrop-blur-md bg-slate-900/20"
+              >
                 <span className="flex items-center">
-                  <svg className="w-5 h-5 mr-3 group-hover:animate-pulse" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
+                  <svg className="w-5 h-5 mr-3 group-hover:animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                   </svg>
-                  Watch Our Story
+                  Get Free Consultation
                 </span>
               </button>
             </div>
