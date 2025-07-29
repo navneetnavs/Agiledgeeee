@@ -3,7 +3,15 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useForm, ValidationError } from '@formspree/react'
 
 const CloudJourneyModal = ({ isOpen, onClose }) => {
-  const [state, handleSubmit] = useForm("xqalbjpn")
+  const [state, handleSubmit] = useForm("mzzvgwly")
+  const formRef = useRef(null)
+
+  // Clear form after successful submission
+  useEffect(() => {
+    if (state.succeeded && formRef.current) {
+      formRef.current.reset()
+    }
+  }, [state.succeeded])
 
   // Handle ESC key to close modal
   useEffect(() => {
@@ -111,7 +119,7 @@ const CloudJourneyModal = ({ isOpen, onClose }) => {
             )}
             
             {/* Form */}
-            <form onSubmit={handleFormSubmit} className="p-6 space-y-6">
+            <form ref={formRef} onSubmit={handleFormSubmit} className="p-6 space-y-6">
               {/* Full Name */}
               <div>
                 <label htmlFor="fullName" className="block text-sm font-medium text-gray-700 mb-2">

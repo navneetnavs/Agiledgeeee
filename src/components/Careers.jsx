@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 
 const roles = [
@@ -13,7 +13,15 @@ const roles = [
 ];
 
 const Careers = () => {
-  const [state, handleSubmit] = useForm("xqalbjpn");
+  const [state, handleSubmit] = useForm("mzzvgwly");
+  const formRef = useRef(null);
+
+  // Clear form after successful submission
+  useEffect(() => {
+    if (state.succeeded && formRef.current) {
+      formRef.current.reset()
+    }
+  }, [state.succeeded]);
 
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-white via-blue-50 to-cyan-100 flex flex-col items-center justify-center py-16 px-4">
@@ -29,6 +37,7 @@ const Careers = () => {
         </div>
       ) : (
         <form
+          ref={formRef}
           className="max-w-2xl w-full mx-auto bg-white/60 backdrop-blur-md shadow-xl rounded-2xl px-6 md:px-12 py-10 md:py-12 flex flex-col gap-6"
           onSubmit={handleSubmit}
         >

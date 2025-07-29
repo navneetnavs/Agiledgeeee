@@ -235,8 +235,7 @@ const Footer = () => {
                 <div>
                   <p className="text-gray-300 font-medium">Our Office</p>
                   <p className="text-gray-400 text-sm">
-                  Rua Augusto Rosa 79<br />
-                  Porto 4000-098, Portugal
+                  Lisbon, Portugal
                   </p>
                 </div>
               </div>

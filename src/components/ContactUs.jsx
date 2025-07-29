@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { useForm, ValidationError } from '@formspree/react'
 
@@ -77,7 +77,15 @@ const ContactHero = () => (
 )
 
 const ContactUs = () => {
-  const [state, handleSubmit] = useForm("xqalbjpn")
+  const [state, handleSubmit] = useForm("mzzvgwly")
+  const formRef = useRef(null)
+
+  // Clear form after successful submission
+  useEffect(() => {
+    if (state.succeeded && formRef.current) {
+      formRef.current.reset()
+    }
+  }, [state.succeeded])
 
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-white via-blue-50 to-cyan-100 flex flex-col">
@@ -93,15 +101,15 @@ const ContactUs = () => {
               <div className="flex items-start">
                 {icons.phone}
                 <div>
-                  <h4 className="font-semibold text-gray-800 mb-1">Call Center</h4>
-                  <p className="text-gray-600 text-sm">+351 920 412 595<br/>+351 920 058 803</p>
+                  <h4 className="font-semibold text-gray-800 mb-1">Contact No.</h4>
+                  <p className="text-gray-600 text-sm">+351 920 412 595</p>
                 </div>
               </div>
               <div className="flex items-start">
                 {icons.location}
                 <div>
                   <h4 className="font-semibold text-gray-800 mb-1">Our Location</h4>
-                  <p className="text-gray-600 text-sm">Rua Augusto Rosa 79<br/>Porto 4000-098, Portugal</p>
+                  <p className="text-gray-600 text-sm">Lisbon, Portugal</p>
                 </div>
               </div>
               <div className="flex items-start">
@@ -128,7 +136,7 @@ const ContactUs = () => {
           <h3 className="text-2xl font-bold text-gray-900 mb-4">Get in Touch</h3>
           <p className="text-gray-600 mb-4 text-sm">Define your goals and identify areas where Agiledge can add value to your business.</p>
           {state.succeeded && <div className="mb-4 text-green-600 font-semibold text-center">Thank you! Your message has been sent successfully.</div>}
-          <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+          <form ref={formRef} className="flex flex-col gap-4" onSubmit={handleSubmit}>
             <input 
               id="name"
               name="name" 
