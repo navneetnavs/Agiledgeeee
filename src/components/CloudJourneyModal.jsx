@@ -1,13 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useForm, ValidationError } from '@formspree/react'
 
 const CloudJourneyModal = ({ isOpen, onClose }) => {
-  const [formData, setFormData] = useState({
-    fullName: '',
-    email: '',
-    companyName: '',
-    projectDescription: ''
-  })
+  const [state, handleSubmit] = useForm("xqalbjpn")
 
   // Handle ESC key to close modal
   useEffect(() => {
@@ -29,25 +25,11 @@ const CloudJourneyModal = ({ isOpen, onClose }) => {
     }
   }, [isOpen, onClose])
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }))
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log('Form submitted:', formData)
-    // Reset form
-    setFormData({
-      fullName: '',
-      email: '',
-      companyName: '',
-      projectDescription: ''
-    })
-    onClose()
+  const handleFormSubmit = (e) => {
+    handleSubmit(e)
+    if (state.succeeded) {
+      onClose()
+    }
   }
 
   const backdropVariants = {
@@ -120,8 +102,16 @@ const CloudJourneyModal = ({ isOpen, onClose }) => {
               </button>
             </div>
 
+            {/* Success Message */}
+            {state.succeeded && (
+              <div className="p-6 text-center">
+                <div className="text-green-600 text-lg font-semibold mb-2">Thank you!</div>
+                <div className="text-gray-600">Your request has been submitted successfully. We'll get back to you soon.</div>
+              </div>
+            )}
+            
             {/* Form */}
-            <form onSubmit={handleSubmit} className="p-6 space-y-6">
+            <form onSubmit={handleFormSubmit} className="p-6 space-y-6">
               {/* Full Name */}
               <div>
                 <label htmlFor="fullName" className="block text-sm font-medium text-gray-700 mb-2">
@@ -131,12 +121,11 @@ const CloudJourneyModal = ({ isOpen, onClose }) => {
                   type="text"
                   id="fullName"
                   name="fullName"
-                  value={formData.fullName}
-                  onChange={handleInputChange}
                   required
                   className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors duration-200"
                   placeholder="Enter your full name"
                 />
+                <ValidationError prefix="Full Name" field="fullName" errors={state.errors} />
               </div>
 
               {/* Email Address */}
@@ -148,12 +137,11 @@ const CloudJourneyModal = ({ isOpen, onClose }) => {
                   type="email"
                   id="email"
                   name="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
                   required
                   className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors duration-200"
                   placeholder="Enter your email address"
                 />
+                <ValidationError prefix="Email" field="email" errors={state.errors} />
               </div>
 
               {/* Company Name */}
@@ -165,11 +153,10 @@ const CloudJourneyModal = ({ isOpen, onClose }) => {
                   type="text"
                   id="companyName"
                   name="companyName"
-                  value={formData.companyName}
-                  onChange={handleInputChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors duration-200"
                   placeholder="Enter your company name (optional)"
                 />
+                <ValidationError prefix="Company Name" field="companyName" errors={state.errors} />
               </div>
 
               {/* Project Description */}
@@ -180,21 +167,21 @@ const CloudJourneyModal = ({ isOpen, onClose }) => {
                 <textarea
                   id="projectDescription"
                   name="projectDescription"
-                  value={formData.projectDescription}
-                  onChange={handleInputChange}
                   required
                   rows={4}
                   className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors duration-200 resize-none"
                   placeholder="Tell us about your project and how we can help..."
                 />
+                <ValidationError prefix="Project Description" field="projectDescription" errors={state.errors} />
               </div>
 
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full px-8 py-4 bg-gradient-to-r from-green-500 to-blue-600 text-white font-semibold rounded-xl shadow-lg hover:from-green-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+                disabled={state.submitting}
+                className="w-full px-8 py-4 bg-gradient-to-r from-green-500 to-blue-600 text-white font-semibold rounded-xl shadow-lg hover:from-green-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Start Your Journey
+                {state.submitting ? 'Sending...' : 'Start Your Journey'}
               </button>
             </form>
           </motion.div>

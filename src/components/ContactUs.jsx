@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
+import { useForm, ValidationError } from '@formspree/react'
 
 const icons = {
   phone: (
@@ -76,26 +77,7 @@ const ContactHero = () => (
 )
 
 const ContactUs = () => {
-  const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' })
-  const [error, setError] = useState('')
-  const [success, setSuccess] = useState('')
-
-  const handleChange = e => {
-    setForm({ ...form, [e.target.name]: e.target.value })
-    setError('')
-    setSuccess('')
-  }
-
-  const handleSubmit = e => {
-    e.preventDefault()
-    if (!form.name || !form.email || !form.subject || !form.message) {
-      setError('All details are required')
-      return
-    }
-    // Here you would send to Google Sheets or your backend
-    setSuccess('Message sent!')
-    setForm({ name: '', email: '', subject: '', message: '' })
-  }
+  const [state, handleSubmit] = useForm("xqalbjpn")
 
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-white via-blue-50 to-cyan-100 flex flex-col">
@@ -145,14 +127,55 @@ const ContactUs = () => {
         <div className="flex-1 rounded-2xl p-8 flex flex-col justify-center">
           <h3 className="text-2xl font-bold text-gray-900 mb-4">Get in Touch</h3>
           <p className="text-gray-600 mb-4 text-sm">Define your goals and identify areas where Agiledge can add value to your business.</p>
-          {error && <div className="mb-4 text-red-600 font-semibold text-center">{error}</div>}
-          {success && <div className="mb-4 text-green-600 font-semibold text-center">{success}</div>}
+          {state.succeeded && <div className="mb-4 text-green-600 font-semibold text-center">Thank you! Your message has been sent successfully.</div>}
           <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
-            <input name="name" value={form.name} onChange={handleChange} type="text" placeholder="Full name" className="px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-400 outline-none bg-white/90" />
-            <input name="email" value={form.email} onChange={handleChange} type="email" placeholder="Email" className="px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-400 outline-none bg-white/90" />
-            <input name="subject" value={form.subject} onChange={handleChange} type="text" placeholder="Subject" className="px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-400 outline-none bg-white/90" />
-            <textarea name="message" value={form.message} onChange={handleChange} placeholder="Message" rows={4} className="px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-400 outline-none bg-white/90" />
-            <button type="submit" className="mt-2 px-6 py-3 bg-gradient-to-r from-green-500 to-blue-600 text-white font-semibold rounded-lg hover:from-green-600 hover:to-blue-700 transition-all">Send a message</button>
+            <input 
+              id="name"
+              name="name" 
+              type="text" 
+              placeholder="Full name" 
+              className="px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-400 outline-none bg-white/90" 
+              required
+            />
+            <ValidationError prefix="Name" field="name" errors={state.errors} />
+            
+            <input 
+              id="email"
+              name="email" 
+              type="email" 
+              placeholder="Email" 
+              className="px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-400 outline-none bg-white/90" 
+              required
+            />
+            <ValidationError prefix="Email" field="email" errors={state.errors} />
+            
+            <input 
+              id="subject"
+              name="subject" 
+              type="text" 
+              placeholder="Subject" 
+              className="px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-400 outline-none bg-white/90" 
+              required
+            />
+            <ValidationError prefix="Subject" field="subject" errors={state.errors} />
+            
+            <textarea 
+              id="message"
+              name="message" 
+              placeholder="Message" 
+              rows={4} 
+              className="px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-400 outline-none bg-white/90" 
+              required
+            />
+            <ValidationError prefix="Message" field="message" errors={state.errors} />
+            
+            <button 
+              type="submit" 
+              disabled={state.submitting}
+              className="mt-2 px-6 py-3 bg-gradient-to-r from-green-500 to-blue-600 text-white font-semibold rounded-lg hover:from-green-600 hover:to-blue-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {state.submitting ? 'Sending...' : 'Send a message'}
+            </button>
           </form>
         </div>
       </div>

@@ -239,25 +239,25 @@ const AboutUs = () => {
                 </div>
               </div>
             </div>
-            {/* Clients Card */}
+            {/* Success Metrics Card */}
             <div className="bg-gradient-to-br from-pink-100 to-white rounded-2xl shadow-xl p-6 w-80 transform rotate-3 hover:rotate-0 transition-transform duration-300">
-              <div className="text-pink-700 font-semibold mb-2">Our Clients</div>
+              <div className="text-pink-700 font-semibold mb-2">Success Metrics</div>
               <ul className="space-y-2">
-                <li className="flex items-center gap-2"><span className="w-6 h-6 rounded-full bg-blue-400 flex items-center justify-center text-white font-bold">A</span> Acme Corp</li>
-                <li className="flex items-center gap-2"><span className="w-6 h-6 rounded-full bg-green-400 flex items-center justify-center text-white font-bold">B</span> BetaSoft</li>
-                <li className="flex items-center gap-2"><span className="w-6 h-6 rounded-full bg-purple-400 flex items-center justify-center text-white font-bold">C</span> Cloudify</li>
-                <li className="flex items-center gap-2"><span className="w-6 h-6 rounded-full bg-yellow-400 flex items-center justify-center text-white font-bold">D</span> DataEdge</li>
+                <li className="flex items-center gap-2"><span className="w-6 h-6 rounded-full bg-blue-400 flex items-center justify-center text-white font-bold">✓</span> More Uptime Achieved</li>
+                <li className="flex items-center gap-2"><span className="w-6 h-6 rounded-full bg-green-400 flex items-center justify-center text-white font-bold">✓</span>  Cost Reduction</li>
+                <li className="flex items-center gap-2"><span className="w-6 h-6 rounded-full bg-purple-400 flex items-center justify-center text-white font-bold">✓</span>  Faster Deployments</li>
+                <li className="flex items-center gap-2"><span className="w-6 h-6 rounded-full bg-yellow-400 flex items-center justify-center text-white font-bold">✓</span> Zero Security Incidents</li>
               </ul>
             </div>
-            {/* Deployment Calendar Card */}
+            {/* Service Pipeline Card */}
             <div className="bg-gradient-to-br from-yellow-100 to-white rounded-2xl shadow-xl p-6 w-80 transform rotate-6 hover:rotate-0 transition-transform duration-300">
-              <div className="text-yellow-700 font-semibold mb-2">Upcoming Deployments</div>
+              <div className="text-yellow-700 font-semibold mb-2">Service Pipeline</div>
               <div className="bg-white rounded-xl shadow p-4">
-                <div className="text-gray-700 font-bold mb-2">May 2024</div>
+                <div className="text-gray-700 font-bold mb-2">Current Projects</div>
                 <div className="flex flex-wrap gap-2">
-                  <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold">May 10: BetaSoft</span>
-                  <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-semibold">May 18: Acme Corp</span>
-                  <span className="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-xs font-semibold">May 23: Cloudify</span>
+                  <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold">Cloud Migration</span>
+                  <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-semibold">DevOps Automation</span>
+                  <span className="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-xs font-semibold">Kubernetes Setup</span>
                 </div>
               </div>
             </div>
