@@ -155,6 +155,72 @@ const ServicesSection = () => {
               </div>
             </div>
 
+            {/* Cloud & DevOps Services */}
+            <div className="mt-8 p-6 bg-gradient-to-r from-blue-50 to-green-50 rounded-xl border border-blue-200">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Cloud & DevOps Services</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <button 
+                  onClick={() => navigate('/services/cloud-migration')}
+                  className="text-left p-3 rounded-lg hover:bg-white hover:shadow-md transition-all duration-200 group"
+                >
+                  <div className="flex items-center space-x-3">
+                    <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
+                      <span className="text-white text-sm">☁️</span>
+                    </div>
+                    <span className="font-medium text-gray-800 group-hover:text-blue-600">Cloud Migration</span>
+                  </div>
+                </button>
+                
+                <button 
+                  onClick={() => navigate('/services/automation')}
+                  className="text-left p-3 rounded-lg hover:bg-white hover:shadow-md transition-all duration-200 group"
+                >
+                  <div className="flex items-center space-x-3">
+                    <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
+                      <span className="text-white text-sm">⚙️</span>
+                    </div>
+                    <span className="font-medium text-gray-800 group-hover:text-green-600">Automation</span>
+                  </div>
+                </button>
+                
+                <button 
+                  onClick={() => navigate('/services/24x7-sre')}
+                  className="text-left p-3 rounded-lg hover:bg-white hover:shadow-md transition-all duration-200 group"
+                >
+                  <div className="flex items-center space-x-3">
+                    <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center">
+                      <span className="text-white text-sm">🛡️</span>
+                    </div>
+                    <span className="font-medium text-gray-800 group-hover:text-orange-600">24x7 SRE</span>
+                  </div>
+                </button>
+                
+                <button 
+                  onClick={() => navigate('/services/devops')}
+                  className="text-left p-3 rounded-lg hover:bg-white hover:shadow-md transition-all duration-200 group"
+                >
+                  <div className="flex items-center space-x-3">
+                    <div className="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center">
+                      <span className="text-white text-sm">🔄</span>
+                    </div>
+                    <span className="font-medium text-gray-800 group-hover:text-purple-600">DevOps</span>
+                  </div>
+                </button>
+                
+                <button 
+                  onClick={() => navigate('/services/cloud-expertise')}
+                  className="text-left p-3 rounded-lg hover:bg-white hover:shadow-md transition-all duration-200 group md:col-span-2"
+                >
+                  <div className="flex items-center space-x-3">
+                    <div className="w-8 h-8 bg-cyan-500 rounded-lg flex items-center justify-center">
+                      <span className="text-white text-sm">💡</span>
+                    </div>
+                    <span className="font-medium text-gray-800 group-hover:text-cyan-600">Cloud Expertise</span>
+                  </div>
+                </button>
+              </div>
+            </div>
+
             <button 
               onClick={() => navigate('/contact')}
               className="bg-gradient-to-r from-green-500 to-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:from-green-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg"

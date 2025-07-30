@@ -13,10 +13,11 @@ const Navbar = () => {
     {
       title: "Cloud & DevOps",
       items: [
-        { name: "Cloud Migration", link: "https://www.akamai.com/blog/cloud/cloud-migration-strategy?utm_source=chatgpt.com" },
-        { name: "DevOps Automation", link: "https://medium.com/pickme-engineering-blog/optimizing-devops-pipelines-mastering-kubernetes-docker-ci-cd-automation-a304e3df00c6" },
-        { name: "Kubernetes & Docker", link: "https://medium.com/pickme-engineering-blog/optimizing-devops-pipelines-mastering-kubernetes-docker-ci-cd-automation-a304e3df00c6" },
-        { name: "CI/CD Pipeline Setup", link: "https://medium.com/@vinoji2005/day-25-kubernetes-ci-cd-pipelines-a432dfdb6e96" }
+        { name: "Cloud Migration", link: "/services/cloud-migration" },
+        { name: "Automation", link: "/services/automation" },
+        { name: "24X7 SRE", link: "/services/24x7-sre" },
+        { name: "DevOps", link: "/services/devops" },
+        { name: "Cloud Expertise", link: "/services/cloud-expertise" }
       ]
     }
   ]
@@ -96,8 +97,8 @@ const Navbar = () => {
               
               {/* Logo Container */}
               <div className="relative">
-                <Link to="/">
-                  <Logo size="medium" />
+                <Link to="/" className="flex items-center">
+                  <Logo size="large" showText={false} variant="horizontal" />
                 </Link>
               </div>
             </div>
@@ -147,15 +148,14 @@ const Navbar = () => {
                         <ul className="space-y-2">
                           {service.items.map((item, itemIndex) => (
                             <li key={itemIndex}>
-                              <a
-                                href={item.link || "#"}
-                                target={item.link ? "_blank" : "_self"}
-                                rel={item.link ? "noopener noreferrer" : ""}
+                              <Link
+                                to={item.link || "#"}
                                 className="text-gray-700 hover:text-green-600 text-sm transition-all duration-200 flex items-center group/item"
+                                onClick={() => setActiveDropdown(null)}
                               >
                                 <span className="w-1 h-1 bg-gray-300 rounded-full mr-3 group-hover/item:bg-green-500 transition-colors duration-200"></span>
                                 {item.name}
-                              </a>
+                              </Link>
                             </li>
                           ))}
                         </ul>
@@ -196,6 +196,19 @@ const Navbar = () => {
               <Link to="/about" className="block px-4 py-2 text-gray-700 hover:text-green-600 font-medium">About Us</Link>
               <Link to="/contact" className="block px-4 py-2 text-gray-700 hover:text-green-600 font-medium">Contact</Link>
               <Link to="/careers" className="block px-4 py-2 text-gray-700 hover:text-green-600 font-medium">Careers</Link>
+              
+              {/* Mobile Services */}
+              <div className="px-4">
+                <div className="text-sm font-semibold text-green-600 mb-2">Cloud & DevOps Services</div>
+                <div className="space-y-2">
+                  <Link to="/services/cloud-migration" className="block py-2 text-gray-700 hover:text-green-600 text-sm">Cloud Migration</Link>
+                  <Link to="/services/automation" className="block py-2 text-gray-700 hover:text-green-600 text-sm">Automation</Link>
+                  <Link to="/services/24x7-sre" className="block py-2 text-gray-700 hover:text-green-600 text-sm">24X7 SRE</Link>
+                  <Link to="/services/devops" className="block py-2 text-gray-700 hover:text-green-600 text-sm">DevOps</Link>
+                  <Link to="/services/cloud-expertise" className="block py-2 text-gray-700 hover:text-green-600 text-sm">Cloud Expertise</Link>
+                </div>
+              </div>
+              
               <button className="w-full mx-4 px-6 py-3 bg-gradient-to-r from-green-500 to-blue-600 text-white font-semibold rounded-xl">
                 Get Started
               </button>

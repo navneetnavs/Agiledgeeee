@@ -10,6 +10,12 @@ import SplashScreen from './components/SplashScreen'
 import AboutUs from './components/AboutUs'
 import ContactUs from './components/ContactUs'
 import Careers from './components/Careers'
+import CloudMigration from './components/services/CloudMigration'
+import Automation from './components/services/Automation'
+import SRE from './components/services/SRE'
+import DevOps from './components/services/DevOps'
+import CloudExpertise from './components/services/CloudExpertise'
+import LogoDemo from './components/LogoDemo'
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 
 // Component to handle scroll to top on route changes
@@ -43,6 +49,12 @@ function App() {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/careers" element={<Careers />} />
+          <Route path="/services/cloud-migration" element={<CloudMigration />} />
+          <Route path="/services/automation" element={<Automation />} />
+          <Route path="/services/24x7-sre" element={<SRE />} />
+          <Route path="/services/devops" element={<DevOps />} />
+          <Route path="/services/cloud-expertise" element={<CloudExpertise />} />
+          <Route path="/logo-demo" element={<LogoDemo />} />
           <Route path="/" element={
             <main>
               <HeroSection />

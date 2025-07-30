@@ -184,7 +184,7 @@ const AboutUs = () => {
         <section className="py-16 px-6 md:px-0 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center fade-slide z-10" ref={whoRef}>
           <div>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4 tracking-tight leading-tight">Who We Are</h2>
-            <p className="font-inter text-gray-700 mb-4">Agiledge is a cloud-first engineering company headquartered in Lisbon, Portugal. We empower teams to build with confidence by providing modern solutions in cloud engineering, DevOps automation, and scalable infrastructure.</p>
+                            <p className="font-inter text-gray-700 mb-4">Agiledge is a cloud-first engineering company headquartered in Porto, Portugal. We empower teams to build with confidence by providing modern solutions in cloud engineering, DevOps automation, and scalable infrastructure.</p>
             <ul className="list-disc pl-6 text-blue-700 font-inter font-medium space-y-1">
               <li>Cloud-native experts with real-world experience</li>
               <li>End-to-end partnership, not just a vendor</li>
