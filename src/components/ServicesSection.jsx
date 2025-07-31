@@ -106,6 +106,17 @@ const ServicesSection = () => {
     return () => observer.disconnect()
   }, [scrollDirection])
 
+  // Add this useEffect to handle scrolling to services section
+  useEffect(() => {
+    if (localStorage.getItem('scrollToServices') === 'true') {
+      const element = document.getElementById('services');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+      localStorage.removeItem('scrollToServices');
+    }
+  }, []);
+
   return (
     <section id="services" ref={sectionRef} className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
       <div className="container mx-auto px-6">
