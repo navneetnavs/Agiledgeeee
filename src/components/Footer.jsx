@@ -1,11 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react'
 import TechLogo from './TechLogo'
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 
 const Footer = () => {
   const [isVisible, setIsVisible] = useState(false)
   const footerRef = useRef(null)
   const columnsRef = useRef([])
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const observerOptions = {
@@ -118,9 +120,14 @@ const Footer = () => {
             <ul className="space-y-3">
               <li><a href="/#services" onClick={(e) => {
                 e.preventDefault();
-                const element = document.getElementById('services');
-                if (element) {
-                  element.scrollIntoView({ behavior: 'smooth' });
+                if (location.pathname !== '/') {
+                  localStorage.setItem('scrollToServices', 'true');
+                  navigate('/');
+                } else {
+                  const element = document.getElementById('services');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
                 }
               }} className="text-gray-400 hover:text-green-400 transition-all duration-300 flex items-center group">
                 <span className="w-1 h-1 bg-green-500 rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></span>
@@ -128,9 +135,14 @@ const Footer = () => {
               </a></li>
               <li><a href="/#services" onClick={(e) => {
                 e.preventDefault();
-                const element = document.getElementById('services');
-                if (element) {
-                  element.scrollIntoView({ behavior: 'smooth' });
+                if (location.pathname !== '/') {
+                  localStorage.setItem('scrollToServices', 'true');
+                  navigate('/');
+                } else {
+                  const element = document.getElementById('services');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
                 }
               }} className="text-gray-400 hover:text-green-400 transition-all duration-300 flex items-center group">
                 <span className="w-1 h-1 bg-green-500 rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></span>
@@ -138,9 +150,14 @@ const Footer = () => {
               </a></li>
               <li><a href="/#services" onClick={(e) => {
                 e.preventDefault();
-                const element = document.getElementById('services');
-                if (element) {
-                  element.scrollIntoView({ behavior: 'smooth' });
+                if (location.pathname !== '/') {
+                  localStorage.setItem('scrollToServices', 'true');
+                  navigate('/');
+                } else {
+                  const element = document.getElementById('services');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
                 }
               }} className="text-gray-400 hover:text-green-400 transition-all duration-300 flex items-center group">
                 <span className="w-1 h-1 bg-green-500 rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></span>
@@ -149,9 +166,14 @@ const Footer = () => {
 
               <li><a href="/#services" onClick={(e) => {
                 e.preventDefault();
-                const element = document.getElementById('services');
-                if (element) {
-                  element.scrollIntoView({ behavior: 'smooth' });
+                if (location.pathname !== '/') {
+                  localStorage.setItem('scrollToServices', 'true');
+                  navigate('/');
+                } else {
+                  const element = document.getElementById('services');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
                 }
               }} className="text-gray-400 hover:text-green-400 transition-all duration-300 flex items-center group">
                 <span className="w-1 h-1 bg-green-500 rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></span>
