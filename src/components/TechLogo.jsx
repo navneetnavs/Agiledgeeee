@@ -152,7 +152,7 @@ const TechLogo = ({ size = 'medium', className = '', showText = false, variant =
       </div>
 
       {/* Company name text below */}
-      <div className={`${smallTextSizes[size]} font-bold tracking-wide text-center -mt-2`}>
+      <div className={`${smallTextSizes[size]} font-bold tracking-wide text-center -mt-3`}>
         <span className="text-green-600 drop-shadow-sm">
           {companyName}
         </span>
@@ -160,7 +160,7 @@ const TechLogo = ({ size = 'medium', className = '', showText = false, variant =
 
       {/* Full company name - Only if showText is true */}
       {showText && (
-        <div className={`text-center ${textSizes[size]} -mt-2`}>
+        <div className={`text-center ${textSizes[size]} -mt-3`}>
           <span className="font-bold tracking-wide text-green-600 drop-shadow-sm">
             {companyName}
           </span>
