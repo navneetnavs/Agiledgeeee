@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import Logo from './Logo'
+import TechLogo from './TechLogo'
 import { Link } from 'react-router-dom'
 
 const Footer = () => {
@@ -84,7 +84,7 @@ const Footer = () => {
           >
             <div className="flex items-center mb-6">
               <div className="flex items-center">
-                <Logo size="xlarge" className="text-white mr-3" />
+                <TechLogo size="xlarge" companyName="agiledge" className="text-white mr-3" />
                 <div>
                   <div className="text-xs text-gray-400"></div>
                 </div>

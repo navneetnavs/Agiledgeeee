@@ -16,6 +16,8 @@ import SRE from './components/services/SRE'
 import DevOps from './components/services/DevOps'
 import CloudExpertise from './components/services/CloudExpertise'
 import LogoDemo from './components/LogoDemo'
+import GlobeLogoDemo from './components/GlobeLogoDemo'
+import TechLogoDemo from './components/TechLogoDemo'
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 
 // Component to handle scroll to top on route changes
@@ -55,6 +57,8 @@ function App() {
           <Route path="/services/devops" element={<DevOps />} />
           <Route path="/services/cloud-expertise" element={<CloudExpertise />} />
           <Route path="/logo-demo" element={<LogoDemo />} />
+          <Route path="/globe-logo-demo" element={<GlobeLogoDemo />} />
+          <Route path="/tech-logo-demo" element={<TechLogoDemo />} />
           <Route path="/" element={
             <main>
               <HeroSection />

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import Logo from './Logo'
+import TechLogo from './TechLogo'
 
 const SplashScreen = ({ onComplete }) => {
   const [currentStep, setCurrentStep] = useState(0)
@@ -107,7 +107,7 @@ const SplashScreen = ({ onComplete }) => {
               transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
             }}
           >
-            <Logo size="xlarge" showText={false} />
+            <TechLogo size="xlarge" companyName="agiledge" />
           </div>
         </div>
 

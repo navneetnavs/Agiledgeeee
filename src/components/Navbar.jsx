@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import Logo from './Logo'
+import TechLogoHorizontal from './TechLogo'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 
@@ -98,7 +98,7 @@ const Navbar = () => {
               {/* Logo Container */}
               <div className="relative">
                 <Link to="/" className="flex items-center">
-                  <Logo size="large" showText={false} variant="horizontal" />
+                  <TechLogoHorizontal size="large" companyName="agiledge" />
                 </Link>
               </div>
             </div>
