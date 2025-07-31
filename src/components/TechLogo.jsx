@@ -35,100 +35,49 @@ const TechLogo = ({ size = 'medium', className = '', showText = false, variant =
         {/* Modern Tech Logo */}
         <div className={`relative ${logoSize[size]}`}>
           <svg viewBox="0 0 100 100" className="w-full h-full">
-            {/* Background geometric shape with stroke for visibility */}
-            <polygon 
-              points="20,80 50,20 80,80 70,80 50,30 30,80" 
-              fill="#16A34A" 
-              stroke="#1E293B"
-              strokeWidth="1"
-              opacity="0.95"
-            />
+            {/* Professional IT company logo - Clean geometric design */}
+            <rect x="20" y="20" width="60" height="60" rx="8" fill="#16A34A" stroke="#0F172A" strokeWidth="2" opacity="0.95"/>
             
-            {/* Stylized 'A' with sharp edges and stroke outline */}
+            {/* Clean, professional 'A' */}
             <path 
-              d="M25 80 L45 25 L65 80 M35 65 L55 65" 
-              stroke="#1E293B" 
+              d="M30 70 L50 30 L70 70 M38 55 L62 55" 
+              stroke="#FFFFFF" 
               strokeWidth="4" 
               strokeLinecap="round" 
               strokeLinejoin="round"
               fill="none"
             />
+            
+            {/* Subtle tech elements - connection lines */}
+            <path d="M25 75 L75 75" stroke="#22C55E" strokeWidth="2" opacity="0.6"/>
+            <path d="M30 25 L30 75" stroke="#22C55E" strokeWidth="2" opacity="0.5"/>
+            <path d="M70 25 L70 75" stroke="#22C55E" strokeWidth="2" opacity="0.5"/>
+            
+            {/* Professional corner indicators */}
+            <circle cx="30" cy="30" r="3" fill="#22C55E" opacity="0.8"/>
+            <circle cx="70" cy="30" r="3" fill="#22C55E" opacity="0.8"/>
+            <circle cx="30" cy="70" r="3" fill="#22C55E" opacity="0.8"/>
+            <circle cx="70" cy="70" r="3" fill="#22C55E" opacity="0.8"/>
+            
+            {/* Subtle directional arrows */}
             <path 
-              d="M25 80 L45 25 L65 80 M35 65 L55 65" 
+              d="M65 35 L72 42 L65 49" 
               stroke="#FFFFFF" 
               strokeWidth="2.5" 
               strokeLinecap="round" 
               strokeLinejoin="round"
               fill="none"
-            />
-            
-            {/* Digital circuit lines with stroke outline */}
-            <path d="M15 85 L85 85" stroke="#1E293B" strokeWidth="2" opacity="0.9"/>
-            <path d="M15 85 L85 85" stroke="#22C55E" strokeWidth="1" opacity="0.8"/>
-            <path d="M15 90 L85 90" stroke="#1E293B" strokeWidth="2" opacity="0.7"/>
-            <path d="M15 90 L85 90" stroke="#22C55E" strokeWidth="1" opacity="0.6"/>
-            <path d="M20 15 L20 85" stroke="#1E293B" strokeWidth="2" opacity="0.8"/>
-            <path d="M20 15 L20 85" stroke="#22C55E" strokeWidth="1" opacity="0.7"/>
-            <path d="M80 15 L80 85" stroke="#1E293B" strokeWidth="2" opacity="0.8"/>
-            <path d="M80 15 L80 85" stroke="#22C55E" strokeWidth="1" opacity="0.7"/>
-            
-            {/* Abstract arrow elements with stroke outline */}
-            <path 
-              d="M75 25 L85 35 L75 45" 
-              stroke="#1E293B" 
-              strokeWidth="3" 
-              strokeLinecap="round" 
-              strokeLinejoin="round"
-              fill="none"
-              opacity="0.9"
+              opacity="0.7"
             />
             <path 
-              d="M75 25 L85 35 L75 45" 
+              d="M28 42 L35 35 L28 28" 
               stroke="#FFFFFF" 
-              strokeWidth="2" 
+              strokeWidth="2.5" 
               strokeLinecap="round" 
               strokeLinejoin="round"
               fill="none"
-              opacity="0.9"
+              opacity="0.7"
             />
-            <path 
-              d="M15 35 L25 25 L15 15" 
-              stroke="#1E293B" 
-              strokeWidth="3" 
-              strokeLinecap="round" 
-              strokeLinejoin="round"
-              fill="none"
-              opacity="0.9"
-            />
-            <path 
-              d="M15 35 L25 25 L15 15" 
-              stroke="#FFFFFF" 
-              strokeWidth="2" 
-              strokeLinecap="round" 
-              strokeLinejoin="round"
-              fill="none"
-              opacity="0.9"
-            />
-            
-            {/* Sharp edge accents with stroke outline */}
-            <path d="M30 15 L35 20 L30 25" stroke="#1E293B" strokeWidth="2.5" opacity="0.8"/>
-            <path d="M30 15 L35 20 L30 25" stroke="#FFFFFF" strokeWidth="1.5" opacity="0.8"/>
-            <path d="M70 15 L65 20 L70 25" stroke="#1E293B" strokeWidth="2.5" opacity="0.8"/>
-            <path d="M70 15 L65 20 L70 25" stroke="#FFFFFF" strokeWidth="1.5" opacity="0.8"/>
-            <path d="M30 75 L35 70 L30 65" stroke="#1E293B" strokeWidth="2.5" opacity="0.8"/>
-            <path d="M30 75 L35 70 L30 65" stroke="#FFFFFF" strokeWidth="1.5" opacity="0.8"/>
-            <path d="M70 75 L65 70 L70 65" stroke="#1E293B" strokeWidth="2.5" opacity="0.8"/>
-            <path d="M70 75 L65 70 L70 65" stroke="#FFFFFF" strokeWidth="1.5" opacity="0.8"/>
-            
-            {/* Futuristic dots with stroke outline */}
-            <circle cx="25" cy="25" r="2" fill="#1E293B" opacity="0.9"/>
-            <circle cx="25" cy="25" r="1.5" fill="#22C55E" opacity="0.9"/>
-            <circle cx="75" cy="25" r="2" fill="#1E293B" opacity="0.9"/>
-            <circle cx="75" cy="25" r="1.5" fill="#22C55E" opacity="0.9"/>
-            <circle cx="25" cy="75" r="2" fill="#1E293B" opacity="0.9"/>
-            <circle cx="25" cy="75" r="1.5" fill="#22C55E" opacity="0.9"/>
-            <circle cx="75" cy="75" r="2" fill="#1E293B" opacity="0.9"/>
-            <circle cx="75" cy="75" r="1.5" fill="#22C55E" opacity="0.9"/>
           </svg>
         </div>
 
@@ -156,100 +105,49 @@ const TechLogo = ({ size = 'medium', className = '', showText = false, variant =
       {/* Modern Tech Logo */}
       <div className={`relative ${logoSize[size]}`}>
         <svg viewBox="0 0 100 100" className="w-full h-full">
-          {/* Background geometric shape with stroke for visibility */}
-          <polygon 
-            points="20,80 50,20 80,80 70,80 50,30 30,80" 
-            fill="#16A34A" 
-            stroke="#1E293B"
-            strokeWidth="1"
-            opacity="0.95"
-          />
+          {/* Professional IT company logo - Clean geometric design */}
+          <rect x="20" y="20" width="60" height="60" rx="8" fill="#16A34A" stroke="#0F172A" strokeWidth="2" opacity="0.95"/>
           
-          {/* Stylized 'A' with sharp edges and stroke outline */}
+          {/* Clean, professional 'A' */}
           <path 
-            d="M25 80 L45 25 L65 80 M35 65 L55 65" 
-            stroke="#1E293B" 
+            d="M30 70 L50 30 L70 70 M38 55 L62 55" 
+            stroke="#FFFFFF" 
             strokeWidth="4" 
             strokeLinecap="round" 
             strokeLinejoin="round"
             fill="none"
           />
+          
+          {/* Subtle tech elements - connection lines */}
+          <path d="M25 75 L75 75" stroke="#22C55E" strokeWidth="2" opacity="0.6"/>
+          <path d="M30 25 L30 75" stroke="#22C55E" strokeWidth="2" opacity="0.5"/>
+          <path d="M70 25 L70 75" stroke="#22C55E" strokeWidth="2" opacity="0.5"/>
+          
+          {/* Professional corner indicators */}
+          <circle cx="30" cy="30" r="3" fill="#22C55E" opacity="0.8"/>
+          <circle cx="70" cy="30" r="3" fill="#22C55E" opacity="0.8"/>
+          <circle cx="30" cy="70" r="3" fill="#22C55E" opacity="0.8"/>
+          <circle cx="70" cy="70" r="3" fill="#22C55E" opacity="0.8"/>
+          
+          {/* Subtle directional arrows */}
           <path 
-            d="M25 80 L45 25 L65 80 M35 65 L55 65" 
+            d="M65 35 L72 42 L65 49" 
             stroke="#FFFFFF" 
             strokeWidth="2.5" 
             strokeLinecap="round" 
             strokeLinejoin="round"
             fill="none"
-          />
-          
-          {/* Digital circuit lines with stroke outline */}
-          <path d="M15 85 L85 85" stroke="#1E293B" strokeWidth="2" opacity="0.9"/>
-          <path d="M15 85 L85 85" stroke="#22C55E" strokeWidth="1" opacity="0.8"/>
-          <path d="M15 90 L85 90" stroke="#1E293B" strokeWidth="2" opacity="0.7"/>
-          <path d="M15 90 L85 90" stroke="#22C55E" strokeWidth="1" opacity="0.6"/>
-          <path d="M20 15 L20 85" stroke="#1E293B" strokeWidth="2" opacity="0.8"/>
-          <path d="M20 15 L20 85" stroke="#22C55E" strokeWidth="1" opacity="0.7"/>
-          <path d="M80 15 L80 85" stroke="#1E293B" strokeWidth="2" opacity="0.8"/>
-          <path d="M80 15 L80 85" stroke="#22C55E" strokeWidth="1" opacity="0.7"/>
-          
-          {/* Abstract arrow elements with stroke outline */}
-          <path 
-            d="M75 25 L85 35 L75 45" 
-            stroke="#1E293B" 
-            strokeWidth="3" 
-            strokeLinecap="round" 
-            strokeLinejoin="round"
-            fill="none"
-            opacity="0.9"
+            opacity="0.7"
           />
           <path 
-            d="M75 25 L85 35 L75 45" 
+            d="M28 42 L35 35 L28 28" 
             stroke="#FFFFFF" 
-            strokeWidth="2" 
+            strokeWidth="2.5" 
             strokeLinecap="round" 
             strokeLinejoin="round"
             fill="none"
-            opacity="0.9"
+            opacity="0.7"
           />
-          <path 
-            d="M15 35 L25 25 L15 15" 
-            stroke="#1E293B" 
-            strokeWidth="3" 
-            strokeLinecap="round" 
-            strokeLinejoin="round"
-            fill="none"
-            opacity="0.9"
-          />
-          <path 
-            d="M15 35 L25 25 L15 15" 
-            stroke="#FFFFFF" 
-            strokeWidth="2" 
-            strokeLinecap="round" 
-            strokeLinejoin="round"
-            fill="none"
-            opacity="0.9"
-          />
-          
-          {/* Sharp edge accents with stroke outline */}
-          <path d="M30 15 L35 20 L30 25" stroke="#1E293B" strokeWidth="2.5" opacity="0.8"/>
-          <path d="M30 15 L35 20 L30 25" stroke="#FFFFFF" strokeWidth="1.5" opacity="0.8"/>
-          <path d="M70 15 L65 20 L70 25" stroke="#1E293B" strokeWidth="2.5" opacity="0.8"/>
-          <path d="M70 15 L65 20 L70 25" stroke="#FFFFFF" strokeWidth="1.5" opacity="0.8"/>
-          <path d="M30 75 L35 70 L30 65" stroke="#1E293B" strokeWidth="2.5" opacity="0.8"/>
-          <path d="M30 75 L35 70 L30 65" stroke="#FFFFFF" strokeWidth="1.5" opacity="0.8"/>
-          <path d="M70 75 L65 70 L70 65" stroke="#1E293B" strokeWidth="2.5" opacity="0.8"/>
-          <path d="M70 75 L65 70 L70 65" stroke="#FFFFFF" strokeWidth="1.5" opacity="0.8"/>
-          
-          {/* Futuristic dots with stroke outline */}
-          <circle cx="25" cy="25" r="2" fill="#1E293B" opacity="0.9"/>
-          <circle cx="25" cy="25" r="1.5" fill="#22C55E" opacity="0.9"/>
-          <circle cx="75" cy="25" r="2" fill="#1E293B" opacity="0.9"/>
-          <circle cx="75" cy="25" r="1.5" fill="#22C55E" opacity="0.9"/>
-          <circle cx="25" cy="75" r="2" fill="#1E293B" opacity="0.9"/>
-          <circle cx="25" cy="75" r="1.5" fill="#22C55E" opacity="0.9"/>
-          <circle cx="75" cy="75" r="2" fill="#1E293B" opacity="0.9"/>
-          <circle cx="75" cy="75" r="1.5" fill="#22C55E" opacity="0.9"/>
         </svg>
       </div>
 
