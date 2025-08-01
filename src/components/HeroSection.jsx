@@ -205,7 +205,7 @@ const HeroSection = () => {
               {[
                 { number: '50+', label: 'Projects Delivered', icon: '☁️' },
                 { number: '10+', label: 'Countries Served', icon: '🌍' },
-                { number: '99%', label: 'Client Satisfaction', icon: '⭐' },
+                { number: '99%', label: 'Client Satisfaction', icon: '👤' },
                 { number: '24/7', label: 'Support Available', icon: '🛡️' }
               ].map((stat, index) => (
                 <div key={index} className="text-center group relative">
