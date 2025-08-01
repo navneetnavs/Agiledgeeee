@@ -203,8 +203,8 @@ const HeroSection = () => {
               style={{ transitionDelay: '1200ms' }}
             >
               {[
-                { number: '500+', label: 'Projects Delivered', icon: '☁️' },
-                { number: '50+', label: 'Countries Served', icon: '🌍' },
+                { number: '50+', label: 'Projects Delivered', icon: '☁️' },
+                { number: '10+', label: 'Countries Served', icon: '🌍' },
                 { number: '99%', label: 'Client Satisfaction', icon: '⭐' },
                 { number: '24/7', label: 'Support Available', icon: '🛡️' }
               ].map((stat, index) => (
