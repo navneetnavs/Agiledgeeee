@@ -9,11 +9,11 @@ const CloudCostManagement = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50">
+      <section className="pt-24 pb-16 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium mb-6">
-              <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+            <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium mb-6">
+              <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
               Cloud Expertise
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
@@ -68,8 +68,8 @@ const CloudCostManagement = () => {
             {/* Key Features */}
             <div className="grid md:grid-cols-2 gap-8 mb-12">
               <div className="bg-white rounded-2xl shadow-lg p-8">
-                <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-6">
-                  <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+                  <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                   </svg>
                 </div>
@@ -80,8 +80,8 @@ const CloudCostManagement = () => {
               </div>
 
               <div className="bg-white rounded-2xl shadow-lg p-8">
-                <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mb-6">
-                  <svg className="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center mb-6">
+                  <svg className="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
                   </svg>
                 </div>
@@ -92,8 +92,8 @@ const CloudCostManagement = () => {
               </div>
 
               <div className="bg-white rounded-2xl shadow-lg p-8">
-                <div className="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center mb-6">
-                  <svg className="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
+                  <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
@@ -117,30 +117,30 @@ const CloudCostManagement = () => {
             </div>
 
             {/* Benefits */}
-            <div className="bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl p-8 mb-12 text-white">
+            <div className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl p-8 mb-12 text-white">
               <h2 className="text-3xl font-bold mb-6">Benefits of Cloud Cost Management</h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <h3 className="text-xl font-semibold mb-3">Cost Reduction</h3>
-                  <p className="text-green-100">
+                  <p className="text-indigo-100">
                     Achieve 20-40% cost savings through intelligent resource optimization, right-sizing, and strategic purchasing.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-3">Improved Visibility</h3>
-                  <p className="text-green-100">
+                  <p className="text-indigo-100">
                     Gain complete visibility into cloud spending with detailed cost allocation and usage analytics.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-3">Budget Control</h3>
-                  <p className="text-green-100">
+                  <p className="text-indigo-100">
                     Prevent budget overruns with automated alerts, spending limits, and proactive cost management.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-3">Operational Efficiency</h3>
-                  <p className="text-green-100">
+                  <p className="text-indigo-100">
                     Optimize resource utilization and eliminate waste through automated scaling and resource management.
                   </p>
                 </div>

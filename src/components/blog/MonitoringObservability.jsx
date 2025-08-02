@@ -117,30 +117,30 @@ const MonitoringObservability = () => {
             </div>
 
             {/* Benefits */}
-            <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 mb-12 text-white">
+            <div className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl p-8 mb-12 text-white">
               <h2 className="text-3xl font-bold mb-6">Benefits of Our Monitoring & Observability Solutions</h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <h3 className="text-xl font-semibold mb-3">Improved Reliability</h3>
-                  <p className="text-blue-100">
+                  <p className="text-indigo-100">
                     Detect and resolve issues before they impact users, reducing downtime and improving system reliability.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-3">Better Performance</h3>
-                  <p className="text-blue-100">
+                  <p className="text-indigo-100">
                     Identify performance bottlenecks and optimize your applications and infrastructure for better user experience.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-3">Cost Optimization</h3>
-                  <p className="text-blue-100">
+                  <p className="text-indigo-100">
                     Monitor resource utilization to identify opportunities for cost savings and efficient resource allocation.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-3">Data-Driven Decisions</h3>
-                  <p className="text-blue-100">
+                  <p className="text-indigo-100">
                     Make informed decisions about infrastructure scaling and application improvements based on real data.
                   </p>
                 </div>

@@ -9,11 +9,11 @@ const WellArchitectedReview = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-gradient-to-br from-purple-50 via-pink-50 to-rose-50">
+      <section className="pt-24 pb-16 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center px-4 py-2 bg-purple-100 text-purple-800 rounded-full text-sm font-medium mb-6">
-              <span className="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+            <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium mb-6">
+              <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
               Cloud Expertise
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
@@ -68,8 +68,8 @@ const WellArchitectedReview = () => {
             {/* Key Features */}
             <div className="grid md:grid-cols-2 gap-8 mb-12">
               <div className="bg-white rounded-2xl shadow-lg p-8">
-                <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
-                  <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+                  <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
                 </div>
@@ -80,8 +80,8 @@ const WellArchitectedReview = () => {
               </div>
 
               <div className="bg-white rounded-2xl shadow-lg p-8">
-                <div className="w-12 h-12 bg-pink-100 rounded-xl flex items-center justify-center mb-6">
-                  <svg className="w-6 h-6 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center mb-6">
+                  <svg className="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
@@ -92,8 +92,8 @@ const WellArchitectedReview = () => {
               </div>
 
               <div className="bg-white rounded-2xl shadow-lg p-8">
-                <div className="w-12 h-12 bg-rose-100 rounded-xl flex items-center justify-center mb-6">
-                  <svg className="w-6 h-6 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
+                  <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
                   </svg>
                 </div>
@@ -117,30 +117,30 @@ const WellArchitectedReview = () => {
             </div>
 
             {/* Benefits */}
-            <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl p-8 mb-12 text-white">
+            <div className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl p-8 mb-12 text-white">
               <h2 className="text-3xl font-bold mb-6">Benefits of Well-Architected Reviews</h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <h3 className="text-xl font-semibold mb-3">Risk Mitigation</h3>
-                  <p className="text-purple-100">
+                  <p className="text-indigo-100">
                     Identify and address security vulnerabilities, performance bottlenecks, and reliability issues before they impact your business.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-3">Cost Optimization</h3>
-                  <p className="text-purple-100">
+                  <p className="text-indigo-100">
                     Discover opportunities to reduce cloud costs through better resource utilization and architectural improvements.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-3">Performance Improvement</h3>
-                  <p className="text-purple-100">
+                  <p className="text-indigo-100">
                     Optimize application performance and user experience through architectural recommendations and best practices.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-3">Compliance Assurance</h3>
-                  <p className="text-purple-100">
+                  <p className="text-indigo-100">
                     Ensure your architecture meets industry standards and regulatory requirements for security and data protection.
                   </p>
                 </div>

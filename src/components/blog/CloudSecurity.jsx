@@ -9,11 +9,11 @@ const CloudSecurity = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-gradient-to-br from-red-50 via-orange-50 to-yellow-50">
+      <section className="pt-24 pb-16 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center px-4 py-2 bg-red-100 text-red-800 rounded-full text-sm font-medium mb-6">
-              <span className="w-2 h-2 bg-red-500 rounded-full mr-2"></span>
+            <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium mb-6">
+              <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
               Cloud Expertise
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
@@ -68,8 +68,8 @@ const CloudSecurity = () => {
             {/* Key Features */}
             <div className="grid md:grid-cols-2 gap-8 mb-12">
               <div className="bg-white rounded-2xl shadow-lg p-8">
-                <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-6">
-                  <svg className="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+                  <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
                   </svg>
                 </div>
@@ -80,8 +80,8 @@ const CloudSecurity = () => {
               </div>
 
               <div className="bg-white rounded-2xl shadow-lg p-8">
-                <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mb-6">
-                  <svg className="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center mb-6">
+                  <svg className="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                   </svg>
                 </div>
@@ -92,8 +92,8 @@ const CloudSecurity = () => {
               </div>
 
               <div className="bg-white rounded-2xl shadow-lg p-8">
-                <div className="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center mb-6">
-                  <svg className="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
+                  <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
                 </div>
@@ -117,30 +117,30 @@ const CloudSecurity = () => {
             </div>
 
             {/* Benefits */}
-            <div className="bg-gradient-to-r from-red-600 to-orange-600 rounded-2xl p-8 mb-12 text-white">
+            <div className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl p-8 mb-12 text-white">
               <h2 className="text-3xl font-bold mb-6">Benefits of Cloud Security</h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <h3 className="text-xl font-semibold mb-3">Enhanced Protection</h3>
-                  <p className="text-red-100">
+                  <p className="text-indigo-100">
                     Protect your data and applications from cyber threats with comprehensive security controls and monitoring.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-3">Compliance</h3>
-                  <p className="text-red-100">
+                  <p className="text-indigo-100">
                     Meet regulatory requirements and industry standards with security frameworks and compliance controls.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-3">Risk Mitigation</h3>
-                  <p className="text-red-100">
+                  <p className="text-indigo-100">
                     Reduce security risks through proactive threat detection, vulnerability management, and incident response.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-3">Business Continuity</h3>
-                  <p className="text-red-100">
+                  <p className="text-indigo-100">
                     Ensure business continuity with disaster recovery, backup strategies, and resilient security architectures.
                   </p>
                 </div>

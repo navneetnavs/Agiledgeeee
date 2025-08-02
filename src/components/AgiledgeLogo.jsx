@@ -38,9 +38,12 @@ const AgiledgeLogo = ({ size = "medium", className = "" }) => {
       
       {/* "giledge" text with color matching the logo */}
       <span 
-        className="-ml-2 font-semibold bg-gradient-to-tr from-teal-400 via-cyan-500 to-blue-600 bg-clip-text text-transparent"
+        className="-ml-2 font-semibold bg-gradient-to-tr from-teal-400 via-cyan-500 to-blue-600 bg-clip-text text-transparent leading-none"
         style={{
-          fontSize: textSizeMap[size]
+          fontSize: textSizeMap[size],
+          lineHeight: '1.2',
+          display: 'inline-block',
+          verticalAlign: 'baseline'
         }}
       >
         giledge

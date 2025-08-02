@@ -21,8 +21,8 @@ const WhyChoose = () => {
       title: "Fast delivery",
       description: "We understand that time is money. Our agile methodology and streamlined processes ensure rapid development cycles without compromising quality. Get your solutions to market faster with our efficient delivery approach.",
       icon: "⚡",
-      color: "border-red-500",
-      bgColor: "bg-red-50"
+      color: "border-green-500",
+      bgColor: "bg-green-50"
     },
     {
       id: 3,
