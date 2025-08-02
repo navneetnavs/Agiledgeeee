@@ -23,6 +23,9 @@ import CloudNativeArchitectures from './components/blog/CloudNativeArchitectures
 import CloudCostManagement from './components/blog/CloudCostManagement'
 import CloudSecurity from './components/blog/CloudSecurity'
 import WellArchitectedReview from './components/blog/WellArchitectedReview'
+import AgiledgeLogoDemo from './components/AgiledgeLogoDemo'
+import TrinityLogoDemo from './components/TrinityLogoDemo'
+import CircleLogoDemo from './components/CircleLogoDemo'
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 
 // Component to handle scroll to top on route changes
@@ -69,6 +72,9 @@ function App() {
           <Route path="/logo-demo" element={<LogoDemo />} />
           <Route path="/globe-logo-demo" element={<GlobeLogoDemo />} />
           <Route path="/tech-logo-demo" element={<TechLogoDemo />} />
+          <Route path="/agiledge-logo-demo" element={<AgiledgeLogoDemo />} />
+          <Route path="/trinity-logo-demo" element={<TrinityLogoDemo />} />
+          <Route path="/circle-logo-demo" element={<CircleLogoDemo />} />
           <Route path="/" element={
             <main>
               <HeroSection />
