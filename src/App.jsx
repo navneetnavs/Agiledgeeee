@@ -18,6 +18,11 @@ import CloudExpertise from './components/services/CloudExpertise'
 import LogoDemo from './components/LogoDemo'
 import GlobeLogoDemo from './components/GlobeLogoDemo'
 import TechLogoDemo from './components/TechLogoDemo'
+import MonitoringObservability from './components/blog/MonitoringObservability'
+import CloudNativeArchitectures from './components/blog/CloudNativeArchitectures'
+import CloudCostManagement from './components/blog/CloudCostManagement'
+import CloudSecurity from './components/blog/CloudSecurity'
+import WellArchitectedReview from './components/blog/WellArchitectedReview'
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 
 // Component to handle scroll to top on route changes
@@ -56,6 +61,11 @@ function App() {
           <Route path="/services/24x7-sre" element={<SRE />} />
           <Route path="/services/devops" element={<DevOps />} />
           <Route path="/services/cloud-expertise" element={<CloudExpertise />} />
+          <Route path="/services/cloud-expertise/monitoring" element={<MonitoringObservability />} />
+          <Route path="/services/cloud-expertise/architectures" element={<CloudNativeArchitectures />} />
+          <Route path="/services/cloud-expertise/cost-management" element={<CloudCostManagement />} />
+          <Route path="/services/cloud-expertise/security" element={<CloudSecurity />} />
+          <Route path="/services/cloud-expertise/well-architected" element={<WellArchitectedReview />} />
           <Route path="/logo-demo" element={<LogoDemo />} />
           <Route path="/globe-logo-demo" element={<GlobeLogoDemo />} />
           <Route path="/tech-logo-demo" element={<TechLogoDemo />} />

@@ -7,17 +7,31 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState(null)
+  const [isServicesClicked, setIsServicesClicked] = useState(false)
   const countryDropdownRef = useRef(null)
 
   const servicesData = [
     {
-      title: "Cloud & DevOps",
-      items: [
-        { name: "Cloud Migration", link: "/services/cloud-migration" },
-        { name: "Automation", link: "/services/automation" },
-        { name: "24X7 SRE", link: "/services/24x7-sre" },
-        { name: "DevOps", link: "/services/devops" },
-        { name: "Cloud Expertise", link: "/services/cloud-expertise" }
+      name: "Cloud Migration",
+      link: "/services/cloud-migration"
+    },
+    {
+      name: "24X7 SRE",
+      link: "/services/24x7-sre"
+    },
+    {
+      name: "DevOps",
+      link: "/services/devops"
+    },
+    {
+      name: "Cloud Expertise",
+      hasSubmenu: true,
+      submenu: [
+        { name: "Monitoring & Observability", link: "/services/cloud-expertise/monitoring" },
+        { name: "Cloud-Native Architectures", link: "/services/cloud-expertise/architectures" },
+        { name: "Cloud Cost Management", link: "/services/cloud-expertise/cost-management" },
+        { name: "Cloud Security", link: "/services/cloud-expertise/security" },
+        { name: "Well-Architected Review", link: "/services/cloud-expertise/well-architected" }
       ]
     }
   ]
@@ -122,43 +136,67 @@ const Navbar = () => {
             {/* Services Dropdown */}
             <div className="relative group">
               <button
-                onMouseEnter={() => setActiveDropdown('services')}
-                onMouseLeave={() => setActiveDropdown(null)}
+                onMouseEnter={() => !isServicesClicked && setActiveDropdown('services')}
+                onMouseLeave={() => !isServicesClicked && setActiveDropdown(null)}
+                onClick={() => {
+                  setIsServicesClicked(!isServicesClicked)
+                  setActiveDropdown(isServicesClicked ? null : 'services')
+                }}
                 className="flex items-center space-x-2 px-4 py-2 rounded-lg text-gray-700 hover:text-green-600 font-medium transition-all duration-300 hover:bg-green-50 group"
               >
                 <span>Services</span>
-                <svg className="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className={`w-4 h-4 transition-transform duration-300 ${(activeDropdown === 'services' || isServicesClicked) ? 'rotate-180' : 'group-hover:rotate-180'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
               
-              {activeDropdown === 'services' && (
+              {(activeDropdown === 'services' || isServicesClicked) && (
                 <div
                   onMouseEnter={() => setActiveDropdown('services')}
-                  onMouseLeave={() => setActiveDropdown(null)}
-                  className="absolute top-full left-0 mt-2 w-96 bg-white rounded-xl shadow-2xl border border-gray-100 p-6 opacity-100 scale-100 transition-all duration-200"
+                  onMouseLeave={() => !isServicesClicked && setActiveDropdown(null)}
+                  className="absolute top-full left-0 mt-2 w-80 bg-white rounded-xl shadow-2xl border border-gray-100 p-4 opacity-100 scale-100 transition-all duration-200"
                 >
-                  <div className="grid grid-cols-2 gap-6">
+                  <div className="space-y-2">
                     {servicesData.map((service, index) => (
-                      <div key={index} className="space-y-3">
-                        <h3 className="text-green-600 font-semibold text-sm flex items-center">
-                          <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
-                          {service.title}
-                        </h3>
-                        <ul className="space-y-2">
-                          {service.items.map((item, itemIndex) => (
-                            <li key={itemIndex}>
-                              <Link
-                                to={item.link || "#"}
-                                className="text-gray-700 hover:text-green-600 text-sm transition-all duration-200 flex items-center group/item"
-                                onClick={() => setActiveDropdown(null)}
-                              >
-                                <span className="w-1 h-1 bg-gray-300 rounded-full mr-3 group-hover/item:bg-green-500 transition-colors duration-200"></span>
-                                {item.name}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
+                      <div key={index} className="relative group/item">
+                        {service.hasSubmenu ? (
+                          <div className="flex items-center justify-between py-2 px-3 rounded-lg hover:bg-gray-50 transition-colors duration-200">
+                            <span className="text-gray-700 text-sm font-medium">{service.name}</span>
+                            <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                            
+                            {/* Submenu */}
+                            <div className="absolute left-full top-0 ml-2 w-80 bg-white rounded-xl shadow-2xl border border-gray-100 p-4 opacity-0 invisible group-hover/item:opacity-100 group-hover/item:visible transition-all duration-200">
+                              <div className="space-y-2">
+                                {service.submenu.map((subItem, subIndex) => (
+                                  <Link
+                                    key={subIndex}
+                                    to={subItem.link}
+                                    className="block py-2 px-3 text-gray-700 hover:text-green-600 text-sm rounded-lg hover:bg-gray-50 transition-all duration-200"
+                                    onClick={() => {
+                                      setActiveDropdown(null)
+                                      setIsServicesClicked(false)
+                                    }}
+                                  >
+                                    {subItem.name}
+                                  </Link>
+                                ))}
+                              </div>
+                            </div>
+                          </div>
+                        ) : (
+                          <Link
+                            to={service.link}
+                            className="block py-2 px-3 text-gray-700 hover:text-green-600 text-sm rounded-lg hover:bg-gray-50 transition-all duration-200"
+                            onClick={() => {
+                              setActiveDropdown(null)
+                              setIsServicesClicked(false)
+                            }}
+                          >
+                            {service.name}
+                          </Link>
+                        )}
                       </div>
                     ))}
                   </div>
@@ -199,13 +237,23 @@ const Navbar = () => {
               
               {/* Mobile Services */}
               <div className="px-4">
-                <div className="text-sm font-semibold text-green-600 mb-2">Cloud & DevOps Services</div>
+                <div className="text-sm font-semibold text-green-600 mb-2">Services</div>
                 <div className="space-y-2">
                   <Link to="/services/cloud-migration" className="block py-2 text-gray-700 hover:text-green-600 text-sm">Cloud Migration</Link>
-                  <Link to="/services/automation" className="block py-2 text-gray-700 hover:text-green-600 text-sm">Automation</Link>
                   <Link to="/services/24x7-sre" className="block py-2 text-gray-700 hover:text-green-600 text-sm">24X7 SRE</Link>
                   <Link to="/services/devops" className="block py-2 text-gray-700 hover:text-green-600 text-sm">DevOps</Link>
-                  <Link to="/services/cloud-expertise" className="block py-2 text-gray-700 hover:text-green-600 text-sm">Cloud Expertise</Link>
+                  
+                  {/* Cloud Expertise with sub-items */}
+                  <div className="py-2">
+                    <div className="text-gray-700 text-sm font-medium mb-2">Cloud Expertise</div>
+                    <div className="pl-4 space-y-1">
+                      <Link to="/services/cloud-expertise/monitoring" className="block py-1 text-gray-600 hover:text-green-600 text-sm">Monitoring & Observability</Link>
+                      <Link to="/services/cloud-expertise/architectures" className="block py-1 text-gray-600 hover:text-green-600 text-sm">Cloud-Native Architectures</Link>
+                      <Link to="/services/cloud-expertise/cost-management" className="block py-1 text-gray-600 hover:text-green-600 text-sm">Cloud Cost Management</Link>
+                      <Link to="/services/cloud-expertise/security" className="block py-1 text-gray-600 hover:text-green-600 text-sm">Cloud Security</Link>
+                      <Link to="/services/cloud-expertise/well-architected" className="block py-1 text-gray-600 hover:text-green-600 text-sm">Well-Architected Review</Link>
+                    </div>
+                  </div>
                 </div>
               </div>
               
