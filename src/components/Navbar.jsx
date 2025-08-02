@@ -1,14 +1,16 @@
 import React, { useState, useEffect, useRef } from 'react'
 import CircleAgiledgeLogo from './CircleAgiledgeLogo'
 import { useTranslation } from 'react-i18next'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState(null)
   const [isServicesClicked, setIsServicesClicked] = useState(false)
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
   const countryDropdownRef = useRef(null)
+  const location = useLocation()
 
   const servicesData = [
     {
@@ -66,7 +68,13 @@ const Navbar = () => {
     }
   ]
 
-
+  // Close mobile menu when location changes
+  useEffect(() => {
+    setIsMobileMenuOpen(false)
+    setMobileServicesOpen(false)
+    setActiveDropdown(null)
+    setIsServicesClicked(false)
+  }, [location])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -87,6 +95,14 @@ const Navbar = () => {
     document.addEventListener('mousedown', handleClickOutside)
     return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [])
+
+  // Handle mobile navigation link clicks
+  const handleMobileNavClick = () => {
+    setIsMobileMenuOpen(false)
+    setMobileServicesOpen(false)
+    setActiveDropdown(null)
+    setIsServicesClicked(false)
+  }
 
   const { t } = useTranslation()
 
@@ -111,7 +127,7 @@ const Navbar = () => {
               
               {/* Logo Container */}
               <div className="relative">
-                <Link to="/" className="flex items-center">
+                <Link to="/" className="flex items-center" onClick={handleMobileNavClick}>
                   <CircleAgiledgeLogo size="medium" />
                 </Link>
               </div>
@@ -229,35 +245,46 @@ const Navbar = () => {
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="lg:hidden bg-white border-t border-gray-100 py-4 opacity-100 scale-100 transition-all duration-200">
-            <div className="space-y-4">
-              <Link to="/" className="block px-4 py-2 text-gray-700 hover:text-green-600 font-medium">Home</Link>
-              <Link to="/about" className="block px-4 py-2 text-gray-700 hover:text-green-600 font-medium">About Us</Link>
-              <Link to="/contact" className="block px-4 py-2 text-gray-700 hover:text-green-600 font-medium">Contact</Link>
-              <Link to="/careers" className="block px-4 py-2 text-gray-700 hover:text-green-600 font-medium">Careers</Link>
+            <div className="space-y-4 px-4">
+              <Link to="/" className="block py-2 text-gray-700 hover:text-green-600 font-medium" onClick={handleMobileNavClick}>Home</Link>
+              <Link to="/about" className="block py-2 text-gray-700 hover:text-green-600 font-medium" onClick={handleMobileNavClick}>About Us</Link>
+              <Link to="/contact" className="block py-2 text-gray-700 hover:text-green-600 font-medium" onClick={handleMobileNavClick}>Contact</Link>
+              <Link to="/careers" className="block py-2 text-gray-700 hover:text-green-600 font-medium" onClick={handleMobileNavClick}>Careers</Link>
               
               {/* Mobile Services */}
-              <div className="px-4">
-                <div className="text-sm font-semibold text-green-600 mb-2">Services</div>
-                <div className="space-y-2">
-                  <Link to="/services/cloud-migration" className="block py-2 text-gray-700 hover:text-green-600 text-sm">Cloud Migration</Link>
-                  <Link to="/services/24x7-sre" className="block py-2 text-gray-700 hover:text-green-600 text-sm">24X7 SRE</Link>
-                  <Link to="/services/devops" className="block py-2 text-gray-700 hover:text-green-600 text-sm">DevOps</Link>
-                  
-                  {/* Cloud Expertise with sub-items */}
-                  <div className="py-2">
-                    <div className="text-gray-700 text-sm font-medium mb-2">Cloud Expertise</div>
-                    <div className="pl-4 space-y-1">
-                      <Link to="/services/cloud-expertise/monitoring" className="block py-1 text-gray-600 hover:text-green-600 text-sm">Monitoring & Observability</Link>
-                      <Link to="/services/cloud-expertise/architectures" className="block py-1 text-gray-600 hover:text-green-600 text-sm">Cloud-Native Architectures</Link>
-                      <Link to="/services/cloud-expertise/cost-management" className="block py-1 text-gray-600 hover:text-green-600 text-sm">Cloud Cost Management</Link>
-                      <Link to="/services/cloud-expertise/security" className="block py-1 text-gray-600 hover:text-green-600 text-sm">Cloud Security</Link>
-                      <Link to="/services/cloud-expertise/well-architected" className="block py-1 text-gray-600 hover:text-green-600 text-sm">Well-Architected Review</Link>
+              <div>
+                <button 
+                  onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                  className="flex items-center justify-between w-full py-2 text-gray-700 hover:text-green-600 font-medium"
+                >
+                  <span className="text-sm font-semibold">Services</span>
+                  <svg className={`w-4 h-4 transition-transform duration-300 ${mobileServicesOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                
+                {mobileServicesOpen && (
+                  <div className="space-y-2 mt-2">
+                    <Link to="/services/cloud-migration" className="block py-2 text-gray-700 hover:text-green-600 text-sm" onClick={handleMobileNavClick}>Cloud Migration</Link>
+                    <Link to="/services/24x7-sre" className="block py-2 text-gray-700 hover:text-green-600 text-sm" onClick={handleMobileNavClick}>24X7 SRE</Link>
+                    <Link to="/services/devops" className="block py-2 text-gray-700 hover:text-green-600 text-sm" onClick={handleMobileNavClick}>DevOps</Link>
+                    
+                    {/* Cloud Expertise with sub-items */}
+                    <div className="py-2">
+                      <div className="text-gray-700 text-sm font-medium mb-2">Cloud Expertise</div>
+                      <div className="pl-4 space-y-1">
+                        <Link to="/services/cloud-expertise/monitoring" className="block py-1 text-gray-600 hover:text-green-600 text-sm" onClick={handleMobileNavClick}>Monitoring & Observability</Link>
+                        <Link to="/services/cloud-expertise/architectures" className="block py-1 text-gray-600 hover:text-green-600 text-sm" onClick={handleMobileNavClick}>Cloud-Native Architectures</Link>
+                        <Link to="/services/cloud-expertise/cost-management" className="block py-1 text-gray-600 hover:text-green-600 text-sm" onClick={handleMobileNavClick}>Cloud Cost Management</Link>
+                        <Link to="/services/cloud-expertise/security" className="block py-1 text-gray-600 hover:text-green-600 text-sm" onClick={handleMobileNavClick}>Cloud Security</Link>
+                        <Link to="/services/cloud-expertise/well-architected" className="block py-1 text-gray-600 hover:text-green-600 text-sm" onClick={handleMobileNavClick}>Well-Architected Review</Link>
+                      </div>
                     </div>
                   </div>
-                </div>
+                )}
               </div>
               
-              <button className="w-full mx-4 px-6 py-3 bg-gradient-to-r from-green-500 to-blue-600 text-white font-semibold rounded-xl">
+              <button className="w-full px-6 py-3 bg-gradient-to-r from-green-500 to-blue-600 text-white font-semibold rounded-xl hover:from-green-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
                 Get Started
               </button>
             </div>

@@ -1,61 +1,54 @@
 import React from 'react'
 
-const AgiledgeLogo = ({ size = 'medium', className = '' }) => {
-  // Size mappings
-  const sizeMap = {
-    small: { logoSize: 24, textSize: 'text-lg', spacing: 'space-x-2' },
-    medium: { logoSize: 32, textSize: 'text-xl', spacing: 'space-x-3' },
-    large: { logoSize: 40, textSize: 'text-2xl', spacing: 'space-x-4' },
-    xlarge: { logoSize: 48, textSize: 'text-3xl', spacing: 'space-x-4' }
+const AgiledgeLogo = ({ size = "medium", className = "" }) => {
+  const sizeClasses = {
+    small: "text-lg",
+    medium: "text-2xl",
+    large: "text-4xl",
+    xlarge: "text-6xl"
   }
 
-  const { logoSize, textSize, spacing } = sizeMap[size] || sizeMap.medium
-
   return (
-    <div className={`flex items-center ${spacing} ${className}`}>
-      {/* Stylized "A" Symbol */}
-      <svg 
-        width={logoSize} 
-        height={logoSize} 
-        viewBox="0 0 100 100" 
-        className="flex-shrink-0"
-      >
-        {/* Main blue triangular shape (base and left side of "A") */}
-        <path
-          d="M 20 80 L 50 20 L 80 80 L 75 80 L 50 25 L 25 80 Z"
-          fill="#06B6D4"
-          stroke="none"
-        />
-        
-        {/* Internal curved lines for depth */}
-        <path
-          d="M 30 70 Q 50 45 70 70"
-          stroke="#0891B2"
-          strokeWidth="2"
-          fill="none"
-          strokeLinecap="round"
-        />
-        
-        <path
-          d="M 35 60 Q 50 40 65 60"
-          stroke="#0EA5E9"
-          strokeWidth="1.5"
-          fill="none"
-          strokeLinecap="round"
-        />
-        
-        {/* Top-right green/yellow triangular element */}
-        <path
-          d="M 55 25 L 75 25 L 65 45 L 55 25 Z"
-          fill="#FBBF24"
-          stroke="none"
-        />
-      </svg>
-
-      {/* "Agiledge" Text with Gradient */}
-      <div className={`font-bold ${textSize} bg-gradient-to-r from-yellow-400 to-cyan-400 bg-clip-text text-transparent`}>
-        Agiledge
+    <div className={`flex items-center font-bold ${sizeClasses[size]} ${className}`}>
+      {/* Large stylized "A" */}
+      <div className="relative">
+        <div 
+          className="text-transparent bg-clip-text bg-gradient-to-br from-teal-600 to-cyan-400 font-extrabold"
+          style={{
+            fontSize: size === "small" ? "1.5rem" : 
+                     size === "medium" ? "2.5rem" : 
+                     size === "large" ? "4rem" : "6rem",
+            lineHeight: "1"
+          }}
+        >
+          A
+        </div>
+        {/* Subtle shadow for depth */}
+        <div 
+          className="absolute inset-0 text-gray-300 opacity-30"
+          style={{
+            fontSize: size === "small" ? "1.5rem" : 
+                     size === "medium" ? "2.5rem" : 
+                     size === "large" ? "4rem" : "6rem",
+            lineHeight: "1",
+            transform: "translate(1px, 1px)"
+          }}
+        >
+          A
+        </div>
       </div>
+      
+      {/* Smaller "giledge" */}
+      <span 
+        className="text-gray-700 font-semibold ml-1"
+        style={{
+          fontSize: size === "small" ? "0.9rem" : 
+                   size === "medium" ? "1.2rem" : 
+                   size === "large" ? "1.8rem" : "2.5rem"
+        }}
+      >
+        giledge
+      </span>
     </div>
   )
 }

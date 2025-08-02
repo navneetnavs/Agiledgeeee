@@ -13,27 +13,45 @@ const CircleAgiledgeLogo = ({ size = 'medium', className = '' }) => {
 
   return (
     <div className={`flex items-center ${spacing} ${className}`}>
-      {/* "Agile" text */}
-      <div className={`font-bold ${textSize} bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent`}>
-        Agiled
-      </div>
-      
-      {/* Circle with "g" */}
-      <div className="relative -mr-1">
+      {/* Large stylized "A" */}
+      <div className="relative">
         <div 
-          className="rounded-full bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 flex items-center justify-center"
-          style={{ width: `${logoSize * 0.6}px`, height: `${logoSize * 0.6}px` }}
+          className="text-transparent bg-clip-text bg-gradient-to-br from-teal-600 to-cyan-400 font-extrabold"
+          style={{
+            fontSize: size === "small" ? "1.8rem" : 
+                     size === "medium" ? "2.8rem" : 
+                     size === "large" ? "3.5rem" : "4.5rem",
+            lineHeight: "1"
+          }}
         >
-          <span className="text-white font-bold" style={{ fontSize: `${logoSize * 0.3}px` }}>
-            g
-          </span>
+          A
+        </div>
+        {/* Subtle shadow for depth */}
+        <div 
+          className="absolute inset-0 text-gray-300 opacity-30"
+          style={{
+            fontSize: size === "small" ? "1.8rem" : 
+                     size === "medium" ? "2.8rem" : 
+                     size === "large" ? "3.5rem" : "4.5rem",
+            lineHeight: "1",
+            transform: "translate(1px, 1px)"
+          }}
+        >
+          A
         </div>
       </div>
       
-      {/* "edge" text */}
-      <div className={`font-bold ${textSize} bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent -ml-1`}>
-        e
-      </div>
+      {/* Smaller "giledge" */}
+      <span 
+        className="text-gray-700 font-semibold ml-1"
+        style={{
+          fontSize: size === "small" ? "1rem" : 
+                   size === "medium" ? "1.3rem" : 
+                   size === "large" ? "1.6rem" : "2rem"
+        }}
+      >
+        giledge
+      </span>
     </div>
   )
 }

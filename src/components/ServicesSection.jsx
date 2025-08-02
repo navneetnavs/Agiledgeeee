@@ -118,67 +118,67 @@ const ServicesSection = () => {
   }, []);
 
   return (
-    <section id="services" ref={sectionRef} className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+    <section id="services" ref={sectionRef} className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-gray-50 to-gray-100">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
           
           {/* Left Side - Content */}
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8 order-2 lg:order-1">
             <div className="space-y-4">
-              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
                 Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-600">Services</span>
               </h2>
-              <p className="text-xl text-gray-600 leading-relaxed">
+              <p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed">
                 We provide comprehensive technology solutions to help your business thrive in the digital age. 
                 From custom software development to cloud transformation, we've got you covered.
               </p>
             </div>
 
-            <div className="space-y-6">
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-blue-600 rounded-lg flex items-center justify-center">
-                  <span className="text-2xl">🎯</span>
+            <div className="space-y-4 sm:space-y-6">
+              <div className="flex items-start space-x-3 sm:space-x-4">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-green-500 to-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span className="text-lg sm:text-2xl">🎯</span>
                 </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900">Custom Solutions</h3>
-                  <p className="text-gray-600">Tailored to your specific business needs</p>
-                </div>
-              </div>
-
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg flex items-center justify-center">
-                  <span className="text-2xl">⚡</span>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900">Fast Delivery</h3>
-                  <p className="text-gray-600">Agile methodology for rapid development</p>
+                <div className="flex-1">
+                  <h3 className="text-base sm:text-lg font-semibold text-gray-900">Custom Solutions</h3>
+                  <p className="text-sm sm:text-base text-gray-600">Tailored to your specific business needs</p>
                 </div>
               </div>
 
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center">
-                  <span className="text-2xl">🛡️</span>
+              <div className="flex items-start space-x-3 sm:space-x-4">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span className="text-lg sm:text-2xl">⚡</span>
                 </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900">Enterprise Security</h3>
-                  <p className="text-gray-600">Bank-grade security and compliance</p>
+                <div className="flex-1">
+                  <h3 className="text-base sm:text-lg font-semibold text-gray-900">Fast Delivery</h3>
+                  <p className="text-sm sm:text-base text-gray-600">Agile methodology for rapid development</p>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-3 sm:space-x-4">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span className="text-lg sm:text-2xl">🛡️</span>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-base sm:text-lg font-semibold text-gray-900">Enterprise Security</h3>
+                  <p className="text-sm sm:text-base text-gray-600">Bank-grade security and compliance</p>
                 </div>
               </div>
             </div>
 
             {/* Cloud & DevOps Services */}
-            <div className="mt-8 p-6 bg-gradient-to-r from-blue-50 to-green-50 rounded-xl border border-blue-200">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Cloud & DevOps Services</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="mt-6 sm:mt-8 p-4 sm:p-6 bg-gradient-to-r from-blue-50 to-green-50 rounded-xl border border-blue-200">
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4">Cloud & DevOps Services</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 <button 
                   onClick={() => navigate('/services/cloud-migration')}
                   className="text-left p-3 rounded-lg hover:bg-white hover:shadow-md transition-all duration-200 group"
                 >
                   <div className="flex items-center space-x-3">
-                    <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
-                      <span className="text-white text-sm">☁️</span>
+                    <div className="w-7 h-7 sm:w-8 sm:h-8 bg-blue-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <span className="text-white text-xs sm:text-sm">☁️</span>
                     </div>
-                    <span className="font-medium text-gray-800 group-hover:text-blue-600">Cloud Migration</span>
+                    <span className="font-medium text-sm sm:text-base text-gray-800 group-hover:text-blue-600">Cloud Migration</span>
                   </div>
                 </button>
                 
@@ -187,10 +187,10 @@ const ServicesSection = () => {
                   className="text-left p-3 rounded-lg hover:bg-white hover:shadow-md transition-all duration-200 group"
                 >
                   <div className="flex items-center space-x-3">
-                    <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
-                      <span className="text-white text-sm">⚙️</span>
+                    <div className="w-7 h-7 sm:w-8 sm:h-8 bg-green-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <span className="text-white text-xs sm:text-sm">⚙️</span>
                     </div>
-                    <span className="font-medium text-gray-800 group-hover:text-green-600">Automation</span>
+                    <span className="font-medium text-sm sm:text-base text-gray-800 group-hover:text-green-600">Automation</span>
                   </div>
                 </button>
                 
@@ -199,10 +199,10 @@ const ServicesSection = () => {
                   className="text-left p-3 rounded-lg hover:bg-white hover:shadow-md transition-all duration-200 group"
                 >
                   <div className="flex items-center space-x-3">
-                    <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center">
-                      <span className="text-white text-sm">🛡️</span>
+                    <div className="w-7 h-7 sm:w-8 sm:h-8 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <span className="text-white text-xs sm:text-sm">🛡️</span>
                     </div>
-                    <span className="font-medium text-gray-800 group-hover:text-orange-600">24x7 SRE</span>
+                    <span className="font-medium text-sm sm:text-base text-gray-800 group-hover:text-orange-600">24x7 SRE</span>
                   </div>
                 </button>
                 
@@ -211,22 +211,22 @@ const ServicesSection = () => {
                   className="text-left p-3 rounded-lg hover:bg-white hover:shadow-md transition-all duration-200 group"
                 >
                   <div className="flex items-center space-x-3">
-                    <div className="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center">
-                      <span className="text-white text-sm">🔄</span>
+                    <div className="w-7 h-7 sm:w-8 sm:h-8 bg-purple-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <span className="text-white text-xs sm:text-sm">🔄</span>
                     </div>
-                    <span className="font-medium text-gray-800 group-hover:text-purple-600">DevOps</span>
+                    <span className="font-medium text-sm sm:text-base text-gray-800 group-hover:text-purple-600">DevOps</span>
                   </div>
                 </button>
                 
                 <button 
                   onClick={() => navigate('/services/cloud-expertise')}
-                  className="text-left p-3 rounded-lg hover:bg-white hover:shadow-md transition-all duration-200 group md:col-span-2"
+                  className="text-left p-3 rounded-lg hover:bg-white hover:shadow-md transition-all duration-200 group sm:col-span-2"
                 >
                   <div className="flex items-center space-x-3">
-                    <div className="w-8 h-8 bg-cyan-500 rounded-lg flex items-center justify-center">
-                      <span className="text-white text-sm">💡</span>
+                    <div className="w-7 h-7 sm:w-8 sm:h-8 bg-cyan-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <span className="text-white text-xs sm:text-sm">💡</span>
                     </div>
-                    <span className="font-medium text-gray-800 group-hover:text-cyan-600">Cloud Expertise</span>
+                    <span className="font-medium text-sm sm:text-base text-gray-800 group-hover:text-cyan-600">Cloud Expertise</span>
                   </div>
                 </button>
               </div>
@@ -234,20 +234,20 @@ const ServicesSection = () => {
 
             <button 
               onClick={() => navigate('/contact')}
-              className="bg-gradient-to-r from-green-500 to-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:from-green-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+              className="w-full sm:w-auto bg-gradient-to-r from-green-500 to-blue-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:from-green-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg text-sm sm:text-base"
             >
               Get Free Consultation
             </button>
           </div>
 
           {/* Right Side - Animated Cards */}
-          <div className="relative">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="relative order-1 lg:order-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               {services.map((service, index) => (
                 <div
                   key={service.id}
                   ref={el => cardsRef.current[index] = el}
-                  className="group relative bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100"
+                  className="group relative bg-white rounded-xl p-4 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100"
                   style={{
                     transform: scrollDirection === 'down' ? 'translateX(100px)' : 'translateX(-100px)',
                     opacity: 0,
@@ -255,25 +255,25 @@ const ServicesSection = () => {
                   }}
                 >
                   {/* Card Header */}
-                  <div className="mb-4">
-                    <div className={`w-12 h-12 bg-gradient-to-r ${service.color} rounded-lg flex items-center justify-center text-2xl`}>
+                  <div className="mb-3 sm:mb-4">
+                    <div className={`w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r ${service.color} rounded-lg flex items-center justify-center text-lg sm:text-2xl`}>
                       {service.icon}
                     </div>
                   </div>
 
                   {/* Card Content */}
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-green-600 transition-colors duration-200">
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3 group-hover:text-green-600 transition-colors duration-200">
                     {service.title}
                   </h3>
-                  <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-gray-600 mb-3 sm:mb-4 leading-relaxed">
                     {service.description}
                   </p>
 
                   {/* Features List */}
-                  <div className="space-y-2">
+                  <div className="space-y-1 sm:space-y-2">
                     {service.features.map((feature, featureIndex) => (
                       <div key={featureIndex} className="flex items-center space-x-2">
-                        <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                        <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 bg-green-500 rounded-full flex-shrink-0"></div>
                         <span className="text-xs text-gray-500 font-medium">{feature}</span>
                       </div>
                     ))}
@@ -286,8 +286,8 @@ const ServicesSection = () => {
             </div>
 
             {/* Decorative Elements */}
-            <div className="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-r from-green-400/20 to-blue-400/20 rounded-full blur-3xl"></div>
-            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-full blur-3xl"></div>
+            <div className="absolute -top-8 -right-8 w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-r from-green-400/20 to-blue-400/20 rounded-full blur-3xl"></div>
+            <div className="absolute -bottom-8 -left-8 w-28 h-28 sm:w-40 sm:h-40 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-full blur-3xl"></div>
           </div>
         </div>
       </div>
