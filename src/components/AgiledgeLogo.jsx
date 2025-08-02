@@ -1,4 +1,5 @@
 import React from 'react'
+import finallogo from '../assets/finallogo.png'
 
 const AgiledgeLogo = ({ size = "medium", className = "" }) => {
   const sizeClasses = {
@@ -8,43 +9,38 @@ const AgiledgeLogo = ({ size = "medium", className = "" }) => {
     xlarge: "text-6xl"
   }
 
+  // Size mappings for the logo image - made bigger compared to text
+  const logoSizeMap = {
+    small: "w-8 h-8",      // Increased from w-6 h-6
+    medium: "w-12 h-12",   // Increased from w-8 h-8
+    large: "w-16 h-16",    // Increased from w-12 h-12
+    xlarge: "w-20 h-20"    // Increased from w-16 h-16
+  }
+
+  // Text sizes for "giledge" - made smaller to emphasize the logo
+  const textSizeMap = {
+    small: "0.8rem",
+    medium: "1rem",
+    large: "1.4rem",
+    xlarge: "1.8rem"
+  }
+
   return (
     <div className={`flex items-center font-bold ${sizeClasses[size]} ${className}`}>
-      {/* Large stylized "A" */}
+      {/* Logo image using finallogo.png as the first letter "A" - made bigger */}
       <div className="relative">
-        <div 
-          className="text-transparent bg-clip-text bg-gradient-to-br from-teal-600 to-cyan-400 font-extrabold"
-          style={{
-            fontSize: size === "small" ? "1.5rem" : 
-                     size === "medium" ? "2.5rem" : 
-                     size === "large" ? "4rem" : "6rem",
-            lineHeight: "1"
-          }}
-        >
-          A
-        </div>
-        {/* Subtle shadow for depth */}
-        <div 
-          className="absolute inset-0 text-gray-300 opacity-30"
-          style={{
-            fontSize: size === "small" ? "1.5rem" : 
-                     size === "medium" ? "2.5rem" : 
-                     size === "large" ? "4rem" : "6rem",
-            lineHeight: "1",
-            transform: "translate(1px, 1px)"
-          }}
-        >
-          A
-        </div>
+        <img 
+          src={finallogo} 
+          alt="Agiledge Logo"
+          className={`${logoSizeMap[size]} object-contain`}
+        />
       </div>
       
-      {/* Smaller "giledge" */}
+      {/* "giledge" text with color matching the logo */}
       <span 
-        className="text-gray-700 font-semibold ml-1"
+        className="-ml-2 font-semibold bg-gradient-to-tr from-teal-400 via-cyan-500 to-blue-600 bg-clip-text text-transparent"
         style={{
-          fontSize: size === "small" ? "0.9rem" : 
-                   size === "medium" ? "1.2rem" : 
-                   size === "large" ? "1.8rem" : "2.5rem"
+          fontSize: textSizeMap[size]
         }}
       >
         giledge

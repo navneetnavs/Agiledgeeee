@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import CircleAgiledgeLogo from './CircleAgiledgeLogo'
+import AgiledgeLogo from './AgiledgeLogo'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 
 const Footer = () => {
@@ -86,7 +86,7 @@ const Footer = () => {
           >
             <div className="flex items-center mb-6">
               <div className="flex items-center">
-                <CircleAgiledgeLogo size="large" />
+                <AgiledgeLogo size="large" />
                 <div>
                   <div className="text-xs text-gray-400"></div>
                 </div>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import CircleAgiledgeLogo from './CircleAgiledgeLogo'
+import AgiledgeLogo from './AgiledgeLogo'
 import { useTranslation } from 'react-i18next'
 import { Link, useLocation } from 'react-router-dom'
 
@@ -128,7 +128,7 @@ const Navbar = () => {
               {/* Logo Container */}
               <div className="relative">
                 <Link to="/" className="flex items-center" onClick={handleMobileNavClick}>
-                  <CircleAgiledgeLogo size="medium" />
+                  <AgiledgeLogo size="medium" />
                 </Link>
               </div>
             </div>
