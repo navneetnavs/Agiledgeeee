@@ -205,8 +205,6 @@ const CloudSecurity = () => {
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   )
 }

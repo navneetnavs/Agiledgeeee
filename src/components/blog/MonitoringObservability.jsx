@@ -205,8 +205,6 @@ const MonitoringObservability = () => {
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   )
 }

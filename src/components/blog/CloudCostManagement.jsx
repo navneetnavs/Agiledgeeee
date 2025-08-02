@@ -205,8 +205,6 @@ const CloudCostManagement = () => {
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   )
 }

@@ -205,8 +205,6 @@ const CloudNativeArchitectures = () => {
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   )
 }
