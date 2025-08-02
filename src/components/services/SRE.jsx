@@ -10,10 +10,10 @@ const SRE = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white via-orange-50 to-red-100">
+    <div className="min-h-screen bg-gradient-to-br from-white via-indigo-50 to-purple-100">
       {/* Hero Section */}
       <section className="relative py-20 px-4 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-orange-600/10 to-red-600/10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-indigo-600/10 to-purple-600/10"></div>
         <div className="relative max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -21,12 +21,12 @@ const SRE = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-orange-500 to-red-600 rounded-full text-white font-semibold text-sm mb-8">
+            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full text-white font-semibold text-sm mb-8">
               <span className="w-2 h-2 bg-white rounded-full mr-3 animate-pulse"></span>
               Cloud & DevOps Services
             </div>
             <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-8 leading-tight">
-              24x7 <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600">SRE</span>
+              24x7 <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">SRE</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Ensure your systems run reliably around the clock with our comprehensive Site Reliability Engineering services
@@ -34,15 +34,15 @@ const SRE = () => {
             <div className="flex justify-center mt-8">
               <div className="flex space-x-8 text-center">
                 <div className="px-6 py-3 bg-white rounded-xl shadow-lg">
-                  <div className="text-2xl font-bold text-orange-600">99.99%</div>
+                  <div className="text-2xl font-bold text-indigo-600">99.99%</div>
                   <div className="text-sm text-gray-600">Uptime</div>
                 </div>
                 <div className="px-6 py-3 bg-white rounded-xl shadow-lg">
-                  <div className="text-2xl font-bold text-red-600">90%</div>
+                  <div className="text-2xl font-bold text-purple-600">90%</div>
                   <div className="text-sm text-gray-600">Faster Response</div>
                 </div>
                 <div className="px-6 py-3 bg-white rounded-xl shadow-lg">
-                  <div className="text-2xl font-bold text-purple-600">24/7</div>
+                  <div className="text-2xl font-bold text-blue-600">24/7</div>
                   <div className="text-sm text-gray-600">Monitoring</div>
                 </div>
               </div>
@@ -124,7 +124,7 @@ const SRE = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 px-4 bg-gradient-to-r from-orange-600 to-red-600">
+      <section className="py-16 px-4 bg-gradient-to-r from-indigo-600 to-purple-600">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -134,12 +134,12 @@ const SRE = () => {
             <h2 className="text-3xl font-bold text-white mb-6">
               Ready for 24x7 Reliability?
             </h2>
-            <p className="text-xl text-orange-100 mb-8">
+            <p className="text-xl text-indigo-100 mb-8">
               Let's discuss how SRE can ensure your systems never sleep
             </p>
             <button
               onClick={() => navigate('/contact')}
-              className="bg-white text-orange-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-colors duration-300 shadow-lg"
+              className="bg-white text-indigo-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-colors duration-300 shadow-lg"
             >
               Contact Us Today
             </button>
@@ -150,4 +150,4 @@ const SRE = () => {
   );
 };
 
-export default SRE; 
+export default SRE;

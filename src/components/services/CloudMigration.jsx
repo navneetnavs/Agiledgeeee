@@ -11,10 +11,10 @@ const CloudMigration = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white via-blue-50 to-cyan-100">
+    <div className="min-h-screen bg-gradient-to-br from-white via-indigo-50 to-purple-100">
       {/* Hero Section */}
       <section className="relative py-20 px-4 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-indigo-600/10 to-purple-600/10"></div>
         <div className="relative max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -22,12 +22,12 @@ const CloudMigration = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full text-white font-semibold text-sm mb-8">
+            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full text-white font-semibold text-sm mb-8">
               <span className="w-2 h-2 bg-white rounded-full mr-3 animate-pulse"></span>
               Cloud & DevOps Services
             </div>
             <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-8 leading-tight">
-              Cloud <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Migration</span>
+              Cloud <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">Migration</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Seamlessly transition your infrastructure to the cloud with our proven migration strategies
@@ -35,15 +35,15 @@ const CloudMigration = () => {
             <div className="flex justify-center mt-8">
               <div className="flex space-x-8 text-center">
                 <div className="px-6 py-3 bg-white rounded-xl shadow-lg">
-                  <div className="text-2xl font-bold text-blue-600">99.9%</div>
+                  <div className="text-2xl font-bold text-indigo-600">99.9%</div>
                   <div className="text-sm text-gray-600">Uptime</div>
                 </div>
                 <div className="px-6 py-3 bg-white rounded-xl shadow-lg">
-                  <div className="text-2xl font-bold text-green-600">40%</div>
+                  <div className="text-2xl font-bold text-purple-600">40%</div>
                   <div className="text-sm text-gray-600">Cost Reduction</div>
                 </div>
                 <div className="px-6 py-3 bg-white rounded-xl shadow-lg">
-                  <div className="text-2xl font-bold text-purple-600">Zero</div>
+                  <div className="text-2xl font-bold text-blue-600">Zero</div>
                   <div className="text-sm text-gray-600">Downtime</div>
                 </div>
               </div>
@@ -125,7 +125,7 @@ const CloudMigration = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 px-4 bg-gradient-to-r from-blue-600 to-purple-600">
+      <section className="py-16 px-4 bg-gradient-to-r from-indigo-600 to-purple-600">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -135,12 +135,12 @@ const CloudMigration = () => {
             <h2 className="text-3xl font-bold text-white mb-6">
               Ready to Transform Your Infrastructure?
             </h2>
-            <p className="text-xl text-blue-100 mb-8">
+            <p className="text-xl text-indigo-100 mb-8">
               Let's discuss how cloud migration can benefit your business
             </p>
             <button
               onClick={() => navigate('/contact')}
-              className="bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-colors duration-300 shadow-lg"
+              className="bg-white text-indigo-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-colors duration-300 shadow-lg"
             >
               Contact Us Today
             </button>
@@ -151,4 +151,4 @@ const CloudMigration = () => {
   );
 };
 
-export default CloudMigration; 
+export default CloudMigration;
