@@ -205,8 +205,6 @@ const WellArchitectedReview = () => {
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   )
 }
